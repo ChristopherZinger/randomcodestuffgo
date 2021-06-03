@@ -12,5 +12,14 @@
 </head>
 <body>
   <header>
-    <h3>Header</h3>
+  <?php
+    wp_nav_menu(
+      array(
+        'menu' => 'primary',
+        'container' => '',
+        'theme_location' => 'primary'
+        // 'items_wrap' => '<ul id="" class="">%3$/</ul>'
+      )
+    )
+  ?>
   </header>
