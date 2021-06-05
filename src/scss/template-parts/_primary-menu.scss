@@ -1,0 +1,50 @@
+@mixin primary-menu {
+  .menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .menu-item {
+    height: 97px;
+    margin: 0 18px;
+    vertical-align: middle;
+  }
+
+  .menu-item a {
+    top: 50%;
+    transform: translateY(-50%);
+    display: block;
+    position: relative
+  }
+
+  .menu-item:first-child {
+    margin-left: 0px
+  }
+
+  .menu-item:last-child {
+    margin-right: 0px;
+  }
+}
+
+.primary-menu {
+  @include primary-menu;
+}
+
+.primary-menu--left {
+  @include primary-menu;
+
+  .menu{
+    justify-content: flex-start;
+  }
+}
+
+.primary-menu--right {
+  @include primary-menu;
+
+  .menu{
+    justify-content: flex-end;
+  }
+}
