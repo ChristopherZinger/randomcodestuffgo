@@ -8,9 +8,8 @@ const PRODUCTION = yargs.argv.prod;
 
 gulp.task('default', mainTask);
 
-
 export const styles = () => {
-  return gulp.src('src/scss/bundle.scss' )
+  return gulp.src('src/scss/styles.scss' )
     .pipe( sass().on('error', sass.logError ))
     .pipe( gulpif(
       PRODUCTION, cleanCSS({ compatibility: 'i8' } )
