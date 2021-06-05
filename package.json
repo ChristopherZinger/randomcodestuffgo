@@ -1,0 +1,36 @@
+{
+  "name": "randomcodestuffgo",
+  "version": "1.0.0",
+  "description": "Theme for wordpress blog : randomcodestuffgo",
+  "main": "index.js",
+  "dependencies": {
+    "webpack-cli": "^4.7.0",
+    "webpack": "^5.38.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.3",
+    "@babel/preset-env": "^7.14.4",
+    "@babel/register": "^7.13.16",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-if": "^3.0.0",
+    "gulp-sass": "^4.1.0",
+    "node-sass": "^6.0.0",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0",
+    "yargs": "^17.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristopherZinger/randomcodestuffgo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChristopherZinger/randomcodestuffgo/issues"
+  },
+  "homepage": "https://github.com/ChristopherZinger/randomcodestuffgo#readme"
+}
