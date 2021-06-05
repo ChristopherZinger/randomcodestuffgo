@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+
+<!-- variations of main menu should be puted so separated files in template parts and isertes as wp_template_part() -->
+<nav class="primary-menu">
+  <?php get_header(); ?>
+</nav>
 
   <main>
     <h3>Main</h3> 
