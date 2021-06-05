@@ -1,2 +1,12 @@
-@import './template-pats/header.scss';
-@import './template-pats/footer.scss';
+/*
+* global
+*/
+
+@import './global/global.scss';
+
+/*
+* template parts
+*/
+@import './template-parts/primary-menu.scss';
+@import './template-parts/header.scss';
+@import './template-parts/footer.scss';
