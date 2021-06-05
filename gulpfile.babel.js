@@ -7,10 +7,15 @@ import sourcemaps from 'gulp-sourcemaps';
 
 const PRODUCTION = yargs.argv.prod;
 
-gulp.task('default', mainTask);
+const paths = {
+  styles: {
+    src: ['src/scss/styles.scss'],
+    dest: 'dist/assets/css'
+  }
+}
 
 export const styles = () => {
-  return gulp.src('src/scss/styles.scss' )
+  return gulp.src(paths.styles.src)
     .pipe( gulpif(
       !PRODUCTION, sourcemaps.init()
     ))
@@ -21,10 +26,9 @@ export const styles = () => {
     .pipe( gulpif(
       !PRODUCTION, sourcemaps.write()
     ))
-    .pipe( gulp.dest('dist/assets/css' ))
+    .pipe( gulp.dest( paths.styles.dest ))
 }
 
-function mainTask (done) {
-  console.log("Gulp: Main Task - running all tasks.")
-  done();
+export const watch = () => {
+  gulp.watch('src/scss/**/*.scss', styles)
 }
