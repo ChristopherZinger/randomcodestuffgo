@@ -4,8 +4,14 @@
 
 @import './global/global.scss';
 @import './global/typography.scss';
+
 /*
-* template parts
+* Pages
+*/
+@import './page-templates/page-contact';
+
+/*
+* Template Parts
 */
 @import './template-parts/header.scss';
 @import './template-parts/footer.scss';

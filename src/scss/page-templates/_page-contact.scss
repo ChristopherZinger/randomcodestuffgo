@@ -1,0 +1,17 @@
+.page-contact {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  column-gap: 7rem;
+
+  h1 {
+    font-size: 70px;
+    font-weight: 500;
+  }
+}
+
+.page-contact__aside-image {
+  img {
+    max-width: 100%;
+  }
+}
+
