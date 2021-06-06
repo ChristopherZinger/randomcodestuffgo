@@ -1,0 +1,53 @@
+@mixin primary-menu__content-middle {
+  .menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .menu-item:first-child {
+    margin-left: 0px
+  }
+
+  .menu-item:last-child {
+    margin-right: 0px;
+  }
+}
+
+.primary-menu {
+  display: flex;
+  justify-content: space-between;
+
+  border-bottom: 1px solid black;
+}
+
+.primary-menu--no-left .primary-menu__content-left { 
+    display: none;
+}
+
+.primary-menu--no-right .primary-menu__content-right {
+  display: none;
+}
+
+.primary-menu__content-middle {
+  @include primary-menu__content-middle;
+}
+
+.primary-menu__content-middle--left {
+  @include primary-menu__content-middle;
+
+  .menu{
+    justify-content: flex-start;
+  }
+}
+
+.primary-menu__content-middle--right {
+  @include primary-menu__content-middle;
+
+  .menu{
+    justify-content: flex-end;
+  }
+}
+

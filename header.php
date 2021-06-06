@@ -11,15 +11,34 @@
   ?>
 </head>
 <body>
-  <header>
-  <?php
-    wp_nav_menu(
-      array(
-        'menu' => 'primary',
-        'container' => '',
-        'theme_location' => 'primary'
-        // 'items_wrap' => '<ul id="" class="">%3$/</ul>'
+  <header class="primary-menu">
+
+  <div class="primary-menu__content-left">
+    <div class="menu-item">
+      <a>
+      Home
+      </a>
+    </div>
+  </div>
+
+  <nav class="primary-menu__content-middle">
+    <?php
+      wp_nav_menu(
+        array(
+          'menu' => 'primary',
+          'container' => '',
+          'theme_location' => 'primary'
+          // 'items_wrap' => '<ul id="" class="">%3$/</ul>'
+        )
       )
-    )
-  ?>
+    ?>
+  </nav>
+
+  <div class="primary-menu__content-right">
+    <div class="menu-item">
+      <a>
+       Info
+      </a>
+    </div>
+  </div>
   </header>

@@ -7,6 +7,13 @@
 /*
 * template parts
 */
-@import './template-parts/primary-menu.scss';
 @import './template-parts/header.scss';
 @import './template-parts/footer.scss';
+
+
+/*
+* Menus
+*/
+@import './navs/primary-menu.scss';
+@import './navs/header.scss';
+@import './navs/menu-item.scss';
