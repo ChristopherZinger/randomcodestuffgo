@@ -1,6 +1,14 @@
 {
-  "name": "randomcodestuffgo",
-  "version": "1.0.0",
+  "name": "rc-theme",
+  "title": "Random Code Stuff Go",
+  "url": "https://chris-web-dev.netlify.app/",
+  "author": {
+      "name": "Chris Z",
+      "email": "krzysztof.zinger@gmail.com",
+      "url": "https://chris-web-dev.netlify.app/"
+  },
+  "copyright": "2020",
+  "version": "3.2.0",
   "description": "Theme for wordpress blog : randomcodestuffgo",
   "main": "index.js",
   "dependencies": {
@@ -17,7 +25,9 @@
     "fancy-log": "^1.3.3",
     "gulp": "^4.0.2",
     "gulp-clean-css": "^4.3.0",
+    "gulp-header": "^2.0.9",
     "gulp-if": "^3.0.0",
+    "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "node-sass": "^6.0.0",
@@ -33,7 +43,6 @@
     "type": "git",
     "url": "git+https://github.com/ChristopherZinger/randomcodestuffgo.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ChristopherZinger/randomcodestuffgo/issues"

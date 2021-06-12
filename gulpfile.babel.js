@@ -7,7 +7,9 @@ import sourcemaps from 'gulp-sourcemaps';
 import webpack from 'webpack';
 import webpackConfig from './webpack.config.js';
 import log from 'fancy-log';
-
+import rename from 'gulp-rename';
+import header from 'gulp-header';
+import pkg from './package.json';
 
 log('PRODUCTION: ' + yargs.argv.prod)
 
@@ -26,29 +28,22 @@ const config = {
       // img: './assets/images',
       // svg: './assets/svg',
   },
-  // banner: {
-  //     theme:
-  //         '/*!\n' +
-  //         ' * Theme Name: <%= pkg.title %>\n' +
-  //         ' * Theme URI: <%= pkg.url %>\n' +
-  //         ' * Description: <%= pkg.title %> theme created by <%= pkg.author.name %>.\n' +
-  //         ' * Author: <%= pkg.author.name %>\n' +
-  //         ' * Author URI: <%= pkg.author.url %>\n' +
-  //         ' * Version: <%= pkg.version %>\n' +
-  //         ' * Text Domain: <%= pkg.name %>\n' +
-  //         ' */\n'
-  // }
-}
-
-const paths = {
-  styles: {
-    src: ['src/scss/styles.scss'],
-    dest: 'dist/assets/css'
+  banner: {
+      theme:
+          '/*!\n' +
+          ' * Theme Name: <%= pkg.title %>\n' +
+          ' * Theme URI: <%= pkg.url %>\n' +
+          ' * Description: <%= pkg.title %> theme created by <%= pkg.author.name %>.\n' +
+          ' * Author: <%= pkg.author.name %>\n' +
+          ' * Author URI: <%= pkg.author.url %>\n' +
+          ' * Version: <%= pkg.version %>\n' +
+          ' * Text Domain: <%= pkg.name %>\n' +
+          ' */\n'
   }
 }
 
 export const scss = () => {
-  return gulp.src(paths.styles.src)
+  return gulp.src(config.src.sass)
     .pipe( gulpif(
       !config.production, sourcemaps.init()
     ))
@@ -59,7 +54,9 @@ export const scss = () => {
     .pipe( gulpif(
       !config.production, sourcemaps.write()
     ))
-    .pipe( gulp.dest( paths.styles.dest ))
+    .pipe(header(config.banner.theme, { pkg }))
+    .pipe(rename('style.css'))
+    .pipe( gulp.dest( config.dist.css))
 }
 
 const js = (done) => {
