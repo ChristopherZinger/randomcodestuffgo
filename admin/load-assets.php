@@ -12,7 +12,7 @@ function rc_load_styles () {
   $version = wp_get_theme()->get( 'Version' );
   wp_enqueue_style(
     'rc_stylesheet', 
-    get_template_directory_uri() . '/dist/assets/css/styles.css', 
+    get_template_directory_uri() . '/style.css', 
     array(), 
     $version, 
     'all');
