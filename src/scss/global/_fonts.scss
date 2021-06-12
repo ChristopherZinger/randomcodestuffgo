@@ -1,0 +1,38 @@
+
+@mixin font-inter-regular () {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+}
+
+@mixin font-inter-italic () {
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+}
+
+@mixin font-inter-medium () {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+}
+
+@mixin font-inter-medium-italic () {
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-weight: 600;
+}
+
+@mixin font-inter-bold () {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: bold;
+}
+
+@mixin font-inter-bold-italic () {
+  font-family: 'Inter', sans-serif;
+  font-style: italic;
+  font-weight: bold;
+}
+
+
