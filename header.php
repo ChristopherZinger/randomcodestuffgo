@@ -4,8 +4,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
   <?php
     wp_head();
   ?>
@@ -21,24 +19,25 @@
     </div>
   </div>
 
-  <nav class="primary-menu__content-middle">
-    <?php
-      wp_nav_menu(
-        array(
-          'menu' => 'primary',
-          'container' => '',
-          'theme_location' => 'primary'
-          // 'items_wrap' => '<ul id="" class="">%3$/</ul>'
-        )
+  <?php
+    wp_nav_menu(
+      array(
+        'menu' => 'primary',
+        'container' => '',
+        'theme_location' => 'primary',
+        'menu_class' => 'primary-menu__content-middle'
       )
-    ?>
-  </nav>
+    )
+  ?>
 
   <div class="primary-menu__content-right">
-    <div class="menu-item">
+    <div class="primary-menu__info menu-item">
       <a>
        Info
       </a>
+    </div>
+    <div class="primary-menu__mobile-button menu-item">
+      menu
     </div>
   </div>
   </header>
