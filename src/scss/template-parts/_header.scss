@@ -1,11 +1,15 @@
+.primary-menu-wrapper {
+    padding: 0px $block-gutter;
+    border-bottom: 1px solid $color-black;
+}
+
 .primary-menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 60px;
     margin: auto;
-    max-width: calc(100% - 2 * #{$global-gutter});
-    border-bottom: 1px solid $color-black;
+    max-width: calc(100% - 2 * #{$block-gutter});
     text-transform: uppercase;
     box-sizing: border-box;
 

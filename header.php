@@ -9,35 +9,37 @@
   ?>
 </head>
 <body>
-  <header class="primary-menu">
+  <div class="primary-menu-wrapper" >
+    <header class="primary-menu">
+      <div class="primary-menu__content-left">
+        <div class="menu-item">
+          <a>
+          Home
+          </a>
+        </div>
+      </div>
 
-  <div class="primary-menu__content-left">
-    <div class="menu-item">
-      <a>
-      Home
-      </a>
-    </div>
-  </div>
+      <?php
+        wp_nav_menu(
+          array(
+            'menu' => 'primary',
+            'container' => '',
+            'theme_location' => 'primary',
+            'menu_class' => 'primary-menu__content-middle'
+          )
+        )
+      ?>
 
-  <?php
-    wp_nav_menu(
-      array(
-        'menu' => 'primary',
-        'container' => '',
-        'theme_location' => 'primary',
-        'menu_class' => 'primary-menu__content-middle'
-      )
-    )
-  ?>
+      <div class="primary-menu__content-right">
+        <div class="primary-menu__info menu-item">
+          <a>
+          Info
+          </a>
+        </div>
 
-  <div class="primary-menu__content-right">
-    <div class="primary-menu__info menu-item">
-      <a>
-       Info
-      </a>
-    </div>
-    <div class="primary-menu__mobile-button menu-item">
-      menu
-    </div>
-  </div>
-  </header>
+        <div class="primary-menu__mobile-button menu-item">
+          menu
+        </div>
+      </div>
+    </header>
+  </div> <!-- primary menu wrapper -->
