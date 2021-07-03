@@ -25,7 +25,8 @@
             'menu' => 'primary',
             'container' => '',
             'theme_location' => 'primary',
-            'menu_class' => 'primary-menu__content-middle'
+            'menu_class' => 'primary-menu__content-middle',
+            'depth' => '1'
           )
         )
       ?>
