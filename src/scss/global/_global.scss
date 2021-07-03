@@ -27,3 +27,8 @@ ul {
     width: calc(100% + (2 * #{$block-gutter}));
     margin-left: calc(-1 * #{$block-gutter});
 }
+
+.rc-block {
+    margin-top: $block-gutter;
+    margin-bottom: $block-gutter;
+}

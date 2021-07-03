@@ -2,11 +2,11 @@
 * global
 */
 
+@import './global/mixin-breakpoint.scss';
 @import './global/settings';
 @import './global/colors';
 @import './global/global.scss';
 @import './global/fonts.scss';
-@import './global/mixin-breakpoint.scss';
 @import './global/mixins.scss';
 @import './global/typography.scss';
 
@@ -20,7 +20,7 @@
 */
 @import './template-parts/header';
 @import './template-parts/footer';
-
+@import './parts/parts';
 
 /*
 * Menus
