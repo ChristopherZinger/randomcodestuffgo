@@ -9,7 +9,7 @@ Template Name: Contact
 
 <?php get_header(); ?>
 
-<main class="page-contact">
+<main class="page-contact content">
   <section>
     <?php the_content(); ?>
 

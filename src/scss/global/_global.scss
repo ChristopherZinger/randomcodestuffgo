@@ -1,3 +1,11 @@
+body {
+    margin: 0;
+}
+
 ul {
-  list-style: none;
+    list-style: none;
+}
+
+.content {
+    padding: 20px $block-gutter;
 }

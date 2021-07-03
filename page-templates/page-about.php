@@ -3,10 +3,13 @@
 Template Name: About 
 */
 ?>
-<nav class="primary-menu">
-  <?php get_header(); ?>
-</nav>
 
-<div class="alignwide">
+<?php get_header(); ?>
+
+
+<main class="content">
   <h1>About</h1>
-</div>
+</main>
+
+
+<?php get_footer(); ?>

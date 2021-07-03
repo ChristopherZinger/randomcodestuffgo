@@ -1,13 +1,11 @@
 .page-contact {
-  display: grid;
-  grid-template-columns: 5fr 3fr;
-  column-gap: 7rem;
-
+    display: grid;
+    grid-template-columns: 5fr 3fr;
+    column-gap: 7rem;
 }
 
 .page-contact__aside-image {
-  img {
-    max-width: 100%;
-  }
+    img {
+        max-width: 100%;
+    }
 }
-

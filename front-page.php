@@ -1,10 +1,8 @@
 
 <!-- variations of main menu should be puted so separated files in template parts and isertes as wp_template_part() -->
-<nav class="primary-menu">
   <?php get_header(); ?>
-</nav>
 
-  <main>
+  <main class="content">
     <h3>Main</h3> 
     <?php
     if ( have_posts() )

@@ -3,8 +3,10 @@
 Template Name: Series
 */
 ?>
-<nav class="primary-menu">
-  <?php get_header(); ?>
-</nav>
+<?php get_header(); ?>
 
-<h1>Series</h1>
+<main class="content" >
+  <h1>Series</h1>
+</main>
+
+<?php get_footer(); ?>
