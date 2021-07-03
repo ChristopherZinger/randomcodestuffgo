@@ -1,0 +1,18 @@
+.footer {
+    position: sticky;
+    top: 100%;
+    // padding: 50px 0px;
+}
+
+.footer__content {
+    max-width: 500px;
+    margin: auto;
+    border-top: 1px solid $color-black;
+    text-align: center;
+}
+
+.footer__placeholder-text {
+    padding: 60px 0px;
+    color: $color-grey;
+    margin: 0;
+}

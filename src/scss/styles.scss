@@ -2,6 +2,8 @@
 * global
 */
 
+@import './global/settings';
+@import './global/colors';
 @import './global/global.scss';
 @import './global/fonts.scss';
 @import './global/mixin-breakpoint.scss';
@@ -16,13 +18,10 @@
 /*
 * Template Parts
 */
-@import './template-parts/header.scss';
-@import './template-parts/footer.scss';
+@import './template-parts/header';
+@import './template-parts/footer';
 
 
 /*
 * Menus
 */
-@import './navs/primary-menu.scss';
-@import './navs/header.scss';
-@import './navs/menu-item.scss';
