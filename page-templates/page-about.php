@@ -7,9 +7,9 @@ Template Name: About
 <?php get_header(); ?>
 
 
-<div class="alignwide">
+<main class="content">
   <h1>About</h1>
-</div>
+</main>
 
 
 <?php get_footer(); ?>
