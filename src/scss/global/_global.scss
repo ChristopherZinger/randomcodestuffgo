@@ -12,3 +12,18 @@ ul {
 .content {
     padding: 0px $block-gutter;
 }
+
+.alignwide {
+    max-width: $block-width-wide;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.alignlarge {
+    width: 100%;
+}
+
+.alignfull {
+    width: calc(100% + (2 * #{$block-gutter}));
+    margin-left: calc(-1 * #{$block-gutter});
+}
