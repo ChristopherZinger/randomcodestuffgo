@@ -17,7 +17,4 @@ spl_autoload_register(
     }
 );
 
-// Autoload from root
-require_once ABSPATH . 'vendor/autoload.php';
-
 require_once 'bootstrap.php';
