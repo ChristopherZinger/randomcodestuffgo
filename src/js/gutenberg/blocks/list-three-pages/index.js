@@ -3,18 +3,24 @@ import { colors } from '../../settings'
 
 const { __ } = wp.i18n
 const { registerBlockType } = wp.blocks
+const { InnerBlocks } = wp.blockEditor
 
 export default () => {
-    registerBlockType('rc/list-three-series', {
+    registerBlockType('rc/list-three-pages', {
         title: __('List Three Pages', 'rc'),
-        description: __("List Three Pages with Parent 'Series'", 'rc'),
+        description: __('List Three Pages', 'rc'),
         icon: {
             foreground: colors.red,
             src: 'screenoptions',
         },
         category: 'rc',
-        attributes: {},
+        attributes: {
+            pagesIds: {
+                type: 'array',
+                default: [],
+            },
+        },
         edit,
-        save: (props) => {},
+        save: (props) => <InnerBlocks.Content />,
     })
 }
