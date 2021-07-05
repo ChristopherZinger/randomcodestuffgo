@@ -1,6 +1,6 @@
 import initBlockStyles from './config/blockStyles'
-import listThreeSeries from './blocks/list-three-series'
-import { colors } from './settings'
+import listThreePages from './blocks/list-three-pages'
+import postCard from './blocks/post-card'
 
 const { __ } = wp.i18n
 const { setCategories, getCategories } = wp.blocks
@@ -23,4 +23,5 @@ setCategories([
 ])
 
 // Register blocks
-listThreeSeries()
+listThreePages()
+postCard()
