@@ -32,3 +32,11 @@ ul {
     margin-top: $block-gutter;
     margin-bottom: $block-gutter;
 }
+
+.rc-grid-4321 {
+    @include rc-grid-4321;
+}
+
+.rc-section {
+    @include rc-section;
+}
