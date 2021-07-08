@@ -1,15 +1,11 @@
 import { PostPicker } from '../../components/post-picker/postPicker'
 
-const { Fragment, useState } = wp.element
+const { Fragment } = wp.element
 const { InnerBlocks } = wp.blockEditor
 
 const ALLOWEDBLOKCS = ['rc/post-card']
-const TEMPLATE = [['rc/post-card']]
+const TEMPLATE = [['rc/section-header'], ['rc/post-card']]
 
 export default () => {
-    return (
-        <Fragment>
-            <InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWEDBLOKCS} />
-        </Fragment>
-    )
+    return <InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWEDBLOKCS} />
 }

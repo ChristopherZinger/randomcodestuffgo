@@ -1,5 +1,3 @@
-.grid-of-posts {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: $block-gutter;
+.grid-of-posts--with-header > *:first-child {
+    grid-column: 1 / -1;
 }
