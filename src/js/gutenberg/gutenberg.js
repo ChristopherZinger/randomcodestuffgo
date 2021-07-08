@@ -1,5 +1,5 @@
 import initBlockStyles from './config/blockStyles'
-import listThreePages from './blocks/list-three-pages'
+import gridOfPosts from './blocks/grid-of-posts'
 import postCard from './blocks/post-card'
 
 const { __ } = wp.i18n
@@ -24,4 +24,4 @@ setCategories([
 
 // Register blocks
 listThreePages()
-postCard()
+gridOfPosts()

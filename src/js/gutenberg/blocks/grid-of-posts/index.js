@@ -6,9 +6,9 @@ const { registerBlockType } = wp.blocks
 const { InnerBlocks } = wp.blockEditor
 
 export default () => {
-    registerBlockType('rc/list-three-pages', {
-        title: __('List Three Pages', 'rc'),
-        description: __('List Three Pages', 'rc'),
+    registerBlockType('rc/grid-of-posts', {
+        title: __('Grid of posts', 'rc'),
+        description: __('Grid of posts', 'rc'),
         icon: {
             foreground: colors.red,
             src: 'screenoptions',
