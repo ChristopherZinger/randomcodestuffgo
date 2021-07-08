@@ -1,3 +1,3 @@
-<div>
-  Server - list three series.
+<div class="tiles-container">
+  <?= $content ?>
 </div>

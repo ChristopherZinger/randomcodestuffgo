@@ -1,0 +1,23 @@
+.six-latest-posts__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.post-card {
+    width: 100%;
+}
+
+.post-card__header {
+    margin: 0; 
+}
+
+.post-card__tags {
+    border-top: 1px solid $color-black;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.post-card__excerpt {
+    margin: 30px 0px 0px 0px;
+}
