@@ -9,7 +9,7 @@
   ?>
 </head>
 <body>
-  <div class="primary-menu-wrapper" >
+    <div class="content" >
     <header class="primary-menu">
       <div class="primary-menu__content-left">
         <div class="menu-item">

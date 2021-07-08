@@ -1,9 +1,11 @@
-  <footer>
-    <h3>Footer</h3> 
+<footer class="footer">
+      <div class="footer__content">
+        <p class="footer__placeholder-text">One day I will know what to put here, I promise.</p>
+      </div>
 
     <?php
       wp_footer();
     ?>
-  </footer>
+</footer>
 </body>
 </html>
