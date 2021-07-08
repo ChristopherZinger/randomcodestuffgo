@@ -6,7 +6,7 @@ Template Name: Series
 <?php get_header(); ?>
 
 <main class="content" >
-  <h1>Series</h1>
+  <?= get_the_content() ?>
 </main>
 
 <?php get_footer(); ?>
