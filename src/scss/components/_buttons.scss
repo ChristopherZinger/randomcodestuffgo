@@ -1,7 +1,15 @@
-.wp-block-button__link,
-.wp-block-button__link:hover,
-.wp-block-button__link:active {
-    background-color: transparent;
-    text-decoration: none;
-    color: $color-black;
+.wp-block-button__link {
+    @include button;
+}
+
+.is-style-primary {
+    .wp-block-button__link {
+        border: 1px solid $color-black;
+    }
+}
+
+.is-style-secondary {
+    .wp-block-button__link {
+        border: 1px solid $color-black;
+    }
 }
