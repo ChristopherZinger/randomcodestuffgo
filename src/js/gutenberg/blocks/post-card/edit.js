@@ -22,8 +22,17 @@ export default ({ attributes: { post }, setAttributes }) => {
                 </ToolbarItem>
             </BlockControls>
 
-            <div>
-                {!post && <button onClick={() => setIsPostPickerOpen(true)}>Pick Post</button>}
+            <div className={`post-card ${!post ? 'post-card--empty' : ''}`}>
+                {!post && (
+                    <div className='is-style-secondary'>
+                        <button
+                            className='wp-block-button__link'
+                            onClick={() => setIsPostPickerOpen(true)}
+                        >
+                            Pick Post
+                        </button>
+                    </div>
+                )}
 
                 {post && (
                     <Fragment>
