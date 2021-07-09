@@ -6,8 +6,9 @@ class Blocks
 {
     public static function init()
     {
-        self::register('list-three-pages', true, array( 'pagesIds' => [] ));
+        self::register('grid-of-posts', true);
         self::register('post-card', true);
+        self::register('section-header', true);
     }
 
     public static function register($block_name, $server_side = false, array $attributes = [], $namespace = 'rc')

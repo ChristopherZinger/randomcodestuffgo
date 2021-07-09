@@ -1,61 +1,82 @@
 body {
-  font-family: 'Inter', sans-serif;
-  color: black;
+    font-family: 'Inter', sans-serif;
+    color: black;
 }
 
-a, a:hover, a:active, a:visited {
-  text-decoration: none;
-  color: black;
+a,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
+    color: black;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  @include font-inter-regular;
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    margin: 0;
+    @include font-inter-regular;
 }
 
-h1, .h1 {
-  font-size: 40px;
-
-  @include breakpoint (large) {
-    font-size: 70px;
-  }
-}
-
-h2, .h2 {
-  font-size: 35px;
-
-  @include breakpoint (large) {
-    font-size: 60px;
-  }
-}
-
-h3, .h3 {
-  font-size: 30px;
-
-  @include breakpoint (large) {
-    font-size: 50px;
-  }
-}
-
-h4, .h4 {
-  font-size: 27px;
-
-  @include breakpoint (large) {
+h1,
+.h1 {
     font-size: 40px;
-  }
+
+    @include breakpoint(large) {
+        font-size: 70px;
+    }
 }
 
-h5, .h5 {
-  font-size: 22px;
+h2,
+.h2 {
+    font-size: 35px;
 
-  @include breakpoint (large) {
-    font-size: 32px;
-  }
+    @include breakpoint(large) {
+        font-size: 60px;
+    }
 }
 
-h6, .h6 {
-  font-size: rem-calc(18);
+h3,
+.h3 {
+    font-size: 30px;
 
-  @include breakpoint (large) {
-    font-size: rem-calc(24);
-  }
+    @include breakpoint(large) {
+        font-size: 50px;
+    }
+}
+
+h4,
+.h4 {
+    font-size: 27px;
+
+    @include breakpoint(large) {
+        font-size: 40px;
+    }
+}
+
+h5,
+.h5 {
+    font-size: 22px;
+
+    @include breakpoint(large) {
+        font-size: 32px;
+    }
+}
+
+h6,
+.h6 {
+    font-size: 18px;
+
+    @include breakpoint(large) {
+        font-size: 18px;
+    }
 }

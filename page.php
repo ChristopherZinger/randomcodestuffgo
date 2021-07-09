@@ -1,10 +1,8 @@
-<nav class="primary-menu">
-  <?php get_header(); ?>
-</nav>
+<?php get_header(); ?>
 
-<?php
-  if (have_posts()) {
-    echo 'there are some posts here';
-  }
+<main class="content">
+   <h1><?php echo get_the_title() ?></h1>
+    <?php the_content() ?>
+</main>
 
-?>
+<?php get_footer(); ?>

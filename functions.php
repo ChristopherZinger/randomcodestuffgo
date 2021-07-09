@@ -71,12 +71,12 @@ class RCTheme
 
   public function adminStylesAndScripts () 
   {
-    // wp_enqueue_style(
-    //   'rc.admin', 
-    //   get_template_directory_uri() . '/admin.css', 
-    //   false, 
-    //   filemtime( RC_THEME_DIR . '/admin.css')
-    // );
+    wp_enqueue_style(
+      'rc.admin', 
+      RC_THEME_URI . '/admin.css', 
+      false, 
+      filemtime( RC_THEME_DIR . '/admin.css')
+    );
     
     wp_enqueue_script( 
       'rc.gutenberg', 
@@ -91,7 +91,7 @@ class RCTheme
         'wp-data',
         'wp-date',
       ], 
-      // filemtime( RC_THEME_DIR_JS . '/gutenberg.min.js' )
+      filemtime( RC_THEME_DIR_JS . '/gutenberg.min.js' )
     );
   
     wp_localize_script(
@@ -121,6 +121,8 @@ class RCTheme
     // alignwide and align full
     add_theme_support( 'align-wide' );
     add_theme_support( 'align-full' );
+    add_theme_support( 'editor-styles' );
+    add_editor_style();
   }
 
   public function themeMenus () 

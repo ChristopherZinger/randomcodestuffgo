@@ -1,3 +1,41 @@
 @mixin tag {
     font-size: 12px;
 }
+
+@mixin rc-grid-4321 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: calc(#{$block-gutter} / 3) $block-gutter;
+
+    @include breakpoint(medium) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @include breakpoint(large) {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include breakpoint(xlarge) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@mixin rc-section {
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+@mixin button {
+    background-color: transparent;
+    text-decoration: none;
+    color: $color-black;
+    border-radius: 0;
+
+    &:hover,
+    &:active,
+    &:visited {
+        background-color: transparent;
+        text-decoration: none;
+        color: $color-black;
+    }
+}

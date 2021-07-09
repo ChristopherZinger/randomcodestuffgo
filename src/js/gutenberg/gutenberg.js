@@ -1,6 +1,7 @@
 import initBlockStyles from './config/blockStyles'
-import listThreePages from './blocks/list-three-pages'
+import gridOfPosts from './blocks/grid-of-posts'
 import postCard from './blocks/post-card'
+import sectionHeader from './blocks/section-header'
 
 const { __ } = wp.i18n
 const { setCategories, getCategories } = wp.blocks
@@ -23,5 +24,6 @@ setCategories([
 ])
 
 // Register blocks
-listThreePages()
+gridOfPosts()
 postCard()
+sectionHeader()
