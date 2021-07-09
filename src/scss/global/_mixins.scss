@@ -24,3 +24,18 @@
     margin-top: 64px;
     margin-bottom: 64px;
 }
+
+@mixin button {
+    background-color: transparent;
+    text-decoration: none;
+    color: $color-black;
+    border-radius: 0;
+
+    &:hover,
+    &:active,
+    &:visited {
+        background-color: transparent;
+        text-decoration: none;
+        color: $color-black;
+    }
+}

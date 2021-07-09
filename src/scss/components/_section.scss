@@ -1,0 +1,8 @@
+.rc-section {
+    @include rc-section;
+}
+
+.rc-block {
+    margin-top: $block-gutter;
+    margin-bottom: $block-gutter;
+}
