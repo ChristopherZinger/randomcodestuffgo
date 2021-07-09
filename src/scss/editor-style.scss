@@ -1,0 +1,44 @@
+/**
+ * Editor-specific styles
+ *
+ * Any styles here will be injected into the Gutenberg editor only.
+ */
+
+$editor: true;
+
+/*
+* global
+*/
+
+@import './global/mixin-breakpoint.scss';
+@import './global/settings';
+@import './global/colors';
+@import './global/global.scss';
+@import './global/fonts.scss';
+@import './global/mixins.scss';
+@import './global/typography.scss';
+/*
+* Components 
+*/
+@import './components/components';
+
+/*
+* Pages
+*/
+@import './page-templates/page-contact';
+
+/*
+* Template Parts
+*/
+@import './template-parts/header';
+@import './template-parts/footer';
+@import './parts/parts';
+
+/*
+* Pages
+*/
+@import './blocks/blocks';
+
+/*
+* Menus
+*/

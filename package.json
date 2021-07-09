@@ -3,9 +3,9 @@
   "title": "Random Code Stuff Go",
   "url": "https://chris-web-dev.netlify.app/",
   "author": {
-      "name": "Chris Z",
-      "email": "krzysztof.zinger@gmail.com",
-      "url": "https://chris-web-dev.netlify.app/"
+    "name": "Chris Z",
+    "email": "krzysztof.zinger@gmail.com",
+    "url": "https://chris-web-dev.netlify.app/"
   },
   "copyright": "2020",
   "version": "3.2.0",
@@ -27,6 +27,8 @@
     "gulp-clean-css": "^4.3.0",
     "gulp-header": "^2.0.9",
     "gulp-if": "^3.0.0",
+    "gulp-notify": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^3.0.0",
