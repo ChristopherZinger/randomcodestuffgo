@@ -3,6 +3,18 @@ html {
     margin: 0;
     min-height: 100%;
     height: 100%;
+
+    background-color: $color-bg;
+    color: $font-color;
+}
+
+body.is-logged--admin {
+    margin-top: 32px;
+}
+
+body.is-dark-mode {
+    background-color: $color-bg-dark-mode;
+    color: $font-color-dark-mode;
 }
 
 ul {
@@ -10,7 +22,15 @@ ul {
 }
 
 .content {
-    padding: 0px $block-gutter;
+    padding: 0px $body-margin-mobile;
+
+    @include breakpoint(medium) {
+        padding: 0px $body-margin-medium;
+    }
+
+    @include breakpoint(large) {
+        padding: 0px $body-margin-large;
+    }
 }
 
 .alignwide {
@@ -26,4 +46,8 @@ ul {
 .alignfull {
     width: calc(100% + (2 * #{$block-gutter}));
     margin-left: calc(-1 * #{$block-gutter});
+}
+
+.sub-menu {
+    padding-left: 10px;
 }

@@ -153,6 +153,10 @@
     @include icon__sun;
 }
 
+.is-dark-mode .primary-menu__color-mode {
+    @include icon__moon;
+}
+
 .primary-menu__search {
     height: 20px;
     width: 20px;
