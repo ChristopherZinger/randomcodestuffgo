@@ -1,6 +1,7 @@
 import gulp from 'gulp'
 import sass from 'gulp-sass'
 import yargs from 'yargs'
+import path from 'path'
 import gulpif from 'gulp-if'
 import cleanCSS from 'gulp-clean-css'
 import sourcemaps from 'gulp-sourcemaps'
@@ -42,19 +43,16 @@ const config = {
             ' * Text Domain: <%= pkg.name %>\n' +
             ' */\n',
     },
+    components: [
+        path.join(__dirname, './node_modules/foundation-sites/scss')
+    ]
 }
 
-// export const scss = () => {
-//     return gulp
-//         .src(config.src.sass)
-//         .pipe(gulpif(!config.production, sourcemaps.init()))
-//         .pipe(sass().on('error', sass.logError))
-//         .pipe(gulpif(config.production, cleanCSS({ compatibility: 'i8' })))
-//         .pipe(gulpif(!config.production, sourcemaps.write()))
-//         .pipe(header(config.banner.theme, { pkg }))
-//         .pipe(rename('style.css'))
-//         .pipe(gulp.dest(config.dist.css))
-// }
+// Copy JS
+const copyJs = () => {
+    const items = ['./node_modules/foundation-sites/dist/js/foundation.min.js']
+    return gulp.src(items).pipe(gulp.dest(config.dist.js))
+}
 
 const js = (done) => {
     const combinedConfig = {
@@ -111,5 +109,5 @@ const watch = () => {
     gulp.watch(config.src.sass, css)
 }
 
-gulp.task('default', gulp.series(gulp.parallel(css, js), watch))
-gulp.task('build', gulp.parallel(css, js))
+gulp.task('default', gulp.series(copyJs, gulp.parallel(css, js), watch))
+gulp.task('build', gulp.series(copyJs, gulp.parallel(css, js)))

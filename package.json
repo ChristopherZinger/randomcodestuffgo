@@ -12,8 +12,9 @@
   "description": "Theme for wordpress blog : randomcodestuffgo",
   "main": "index.js",
   "dependencies": {
-    "webpack-cli": "^4.7.0",
-    "webpack": "^5.38.1"
+    "foundation-sites": "^6.6.3",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.0"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
@@ -33,6 +34,7 @@
     "gulp-sass": "^4.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "node-sass": "^6.0.0",
+    "path": "^0.12.7",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2",
     "yargs": "^17.0.1"
