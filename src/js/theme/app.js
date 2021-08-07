@@ -1,7 +1,8 @@
-import header from './header'
-
+import Header from './header'
+import HeaderSubmenu from './headerSubmenu'
 // todo : document on load
 
-header().init()
+new Header()
+new HeaderSubmenu()
 
 console.log('Theme scripts')

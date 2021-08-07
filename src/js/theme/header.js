@@ -1,38 +1,43 @@
-export default () => {
-    const menuButton = document.querySelector('.primary-menu__mobile-button')
-    const primaryMenuContentMiddle = document.querySelector('.primary-menu__content-middle')
-    const menuItemHasChildren = document.querySelector('.menu-item-has-children')
+import { enableBodyScroll, disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
+export default class {
+    init() {
+        this.menuButton = document.querySelector('.primary-menu__hamburger')
+        this.menu = document.querySelector('.primary-menu')
+        this.rolledUpMenu = document.querySelector('#menu-primary-menu')
+        this.openMenuStyle = 'primary-menu--open'
 
-    const init = () => {
-        if (!menuButton) {
-            return
+        this.enableBodyScrollIfNotMobile()
+
+        if (!this.menu || !this.menuButton) return
+
+        this.handleOpenCloseMenu()
+    }
+
+    constructor() {
+        this.init()
+    }
+
+    enableBodyScrollIfNotMobile() {
+        document.addEventListener('resize', () => {
+            if (window.innerWidth > 640) {
+                clearAllBodyScrollLocks()
+            }
+        })
+    }
+
+    handleBodyLock() {
+        const isMenuOpen = this.menu.classList.contains(this.openMenuStyle)
+        if (isMenuOpen) {
+            clearAllBodyScrollLocks()
+        } else {
+            disableBodyScroll(this.rolledUpMenus)
         }
-
-        if (!primaryMenuContentMiddle) {
-            console.log('primary menu is missing')
-            return
-        }
-
-        setAllEventListeners()
     }
 
-    const setAllEventListeners = () => {
-        menuButton.addEventListener('click', handlePrimarMenuToggle)
-        menuItemHasChildren.addEventListener('click', handleSubmenuToggle)
-    }
-
-    const handleSubmenuToggle = ({ target }) => {
-        if (!target instanceof HTMLElement) {
-            console.log(target)
-        }
-        target.classList.toggle('sub-menu--open')
-    }
-
-    const handlePrimarMenuToggle = () => {
-        primaryMenuContentMiddle.classList.toggle('primary-menu--open')
-    }
-
-    return {
-        init,
+    handleOpenCloseMenu() {
+        this.menuButton.addEventListener('click', () => {
+            this.handleBodyLock()
+            this.menu.classList.toggle(this.openMenuStyle)
+        })
     }
 }
