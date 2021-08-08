@@ -1,9 +1,6 @@
 <?php
-	$seriesLink = get_permalink(get_page_by_path('series'));
-	$seriesId = get_cat_id('series');
-	$series = get_posts( ['category' => $seriesId, 'numberposts' => 4 ]);
-
 	$seriesPage =  get_page_by_path( 'series' );
+	$seriesLink = get_permalink($seriesPage);
 
 	if ($seriesPage) {
 		$args = array(
@@ -20,15 +17,15 @@
 
 ?>
 <div class="home-series">
-	<div class="grid-x home-series__header">
-		<div class="cell small-6"><h2 class="h6">Series</h2></div>
-
-		<div class="cell small-6">
-			<a href="<?= esc_attr($seriesLink); ?>" class="h6 home-series__view-all">
-				View All
-			</a>
-		</div>
-	</div>
+	<?=
+	 	get_template_part('template-parts/part', 'home-section-header',
+			[
+				'title' => 'Series',
+				'linkText' => 'View All',
+				'linkURL' => $seriesLink
+			]
+		); 
+	?>
 
 	<div class="grid-x grid-margin-x series__cards">
 		<?php
