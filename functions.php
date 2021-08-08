@@ -130,7 +130,8 @@ class RCTheme
   {
     $locations = array(
       'primary' => 'Primary Menu',
-      'footer' => 'Footer Meny'
+      'footer-left' => 'Footer Menu Left',
+      'footer-right' => 'Footer Menu Right'
     );
   
     register_nav_menus($locations);
