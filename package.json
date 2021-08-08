@@ -12,6 +12,7 @@
   "description": "Theme for wordpress blog : randomcodestuffgo",
   "main": "index.js",
   "dependencies": {
+    "body-scroll-lock": "^4.0.0-beta.0",
     "foundation-sites": "^6.6.3",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"

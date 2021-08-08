@@ -16,7 +16,7 @@
 	
 
 ?>
-<div class="home-series">
+<div class="home-series section">
 	<?=
 	 	get_template_part('template-parts/part', 'home-section-header',
 			[
@@ -38,7 +38,8 @@
 						[
 							'title' => get_the_title(),
 							'excerpt' => get_the_excerpt(),
-							'styles' => 'cell small-12 medium-6 large-3'
+							'styles' => 'cell small-12 medium-6 large-3',
+							'linkURL' => get_the_permalink()
 						]
 					);
 				}
