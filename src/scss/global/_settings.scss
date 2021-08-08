@@ -1,7 +1,7 @@
 @import 'util/util';
 
-$block-gutter: 40px;
-$block-gutter-horizontal: 20px;
+$block-gutter: rem-calc(40);
+$block-gutter-horizontal: rem-calc(20);
 $block-width: 700px;
 $block-width-wide: 1200px;
 
@@ -26,3 +26,9 @@ $duration-fast: 0.25s;
 $easing: cubic-bezier(0, 0.6, 0.7, 1);
 $transition: $duration $easing;
 $transition-fast: $duration-fast $easing;
+
+/* Foundation variables */
+$grid-margin-gutters: (
+    small: 20,
+    medium: 40,
+);

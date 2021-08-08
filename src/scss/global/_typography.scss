@@ -1,5 +1,5 @@
 body {
-    font-family: 'Inter', sans-serif;
+    @include font-raleway-regular;
     @include text-m;
 }
 
@@ -78,7 +78,7 @@ h5,
     font-size: 22px;
 
     @include breakpoint(large) {
-        font-size: 32px;
+        font-size: 28px;
     }
 }
 
@@ -86,6 +86,7 @@ h6,
 .h6 {
     font-size: 16px;
     @include upper-case;
+    @include font-raleway-thin;
 
     @include breakpoint(large) {
         font-size: 16px;

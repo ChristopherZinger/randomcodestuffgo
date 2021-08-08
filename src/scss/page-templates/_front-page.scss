@@ -1,0 +1,28 @@
+.home__header {
+    margin: 100px 0px;
+    line-height: (48 / 48);
+
+    @include breakpoint(medium) {
+        line-height: (80 / 80);
+    }
+}
+
+.home__tags {
+    margin: 20px 0px;
+}
+
+.home__tags-header {
+    @include text-thin;
+    line-height: (14 / 14);
+    height: 14px;
+}
+
+.home__tags-list {
+    margin-top: 16px;
+    min-height: 50px;
+    a {
+        @include text-s;
+        text-decoration: underline;
+        margin-right: $block-gutter-horizontal;
+    }
+}

@@ -51,6 +51,7 @@ class RCTheme
     $version = wp_get_theme()->get( 'Version' );
 
     wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Inter&display=swap', false );
+    wp_enqueue_style( 'wpb-google-fonta', 'https://fonts.googleapis.com/css2?family=Raleway&display=swap', false);
 
     wp_enqueue_style(
       'rc_stylesheet', 

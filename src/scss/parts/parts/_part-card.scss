@@ -1,0 +1,12 @@
+.card__text {
+    margin: 0;
+}
+
+.card__header {
+    margin-bottom: 10px;
+}
+
+.card {
+    margin-bottom: $block-gutter-horizontal;
+    @include text-thin;
+}
