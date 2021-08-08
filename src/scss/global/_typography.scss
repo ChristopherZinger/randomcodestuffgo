@@ -39,10 +39,10 @@ h6,
 
 h1,
 .h1 {
-    font-size: 40px;
+    font-size: 48px;
 
     @include breakpoint(large) {
-        font-size: 70px;
+        font-size: 80px;
     }
 }
 
@@ -84,10 +84,11 @@ h5,
 
 h6,
 .h6 {
-    font-size: 18px;
+    font-size: 16px;
+    @include upper-case;
 
     @include breakpoint(large) {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 

@@ -1,9 +1,13 @@
 <?php
-  $postToFindTagsFor = $args['postToFindTagsFor'];
+  $tags = $args['tags'] ?? [];
+  $post = $args['postId'];
 
-  $posttags = get_the_tags($postToFindTagsFor);
-  if ($posttags) {
-    foreach($posttags as $tag) {
+  if ($post) {
+    $tags = get_the_tags($post);
+  }
+
+  if ($tags) {
+    foreach($tags as $tag) {
       get_template_part('template-parts/part', 'tag',  array('tag' => $tag));
     }
   }

@@ -1,9 +1,9 @@
 @import 'util/util';
 
 $block-gutter: 40px;
+$block-gutter-horizontal: 20px;
 $block-width: 700px;
 $block-width-wide: 1200px;
-
 
 /* Breakpoints */
 $breakpoints: (
@@ -11,7 +11,7 @@ $breakpoints: (
     medium: 640px,
     large: 1024px,
     xlarge: 1200px,
-    xxlarge: 1440px
+    xxlarge: 1440px,
 );
 $print-breakpoint: large;
 $breakpoint-classes: (small medium large xlarge);
@@ -19,7 +19,6 @@ $breakpoint-classes: (small medium large xlarge);
 $body-margin-mobile: 10px;
 $body-margin-medium: 40px;
 $body-margin-large: 80px;
-
 
 /* Transitions */
 $duration: 0.5s;

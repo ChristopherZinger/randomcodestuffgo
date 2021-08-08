@@ -23,10 +23,16 @@ $editor: false;
 */
 @import './components/components';
 
+/**
+ * RC Styles
+ */
+@import './rc-styles/rc-styles';
+
 /*
 * Pages
 */
 @import './page-templates/page-contact';
+@import './page-templates/front-page';
 
 /*
 * Template Parts

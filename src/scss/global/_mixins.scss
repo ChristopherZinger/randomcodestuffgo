@@ -1,25 +1,3 @@
-@mixin tag {
-    font-size: 12px;
-}
-
-// @mixin rc-grid-4321 {
-//     display: grid;
-//     grid-template-columns: 1fr;
-//     grid-gap: calc(#{$block-gutter} / 3) $block-gutter;
-
-// @include breakpoint(medium) {
-//     grid-template-columns: 1fr 1fr;
-// }
-
-// @include breakpoint(large) {
-//     grid-template-columns: 1fr 1fr 1fr;
-// }
-
-// @include breakpoint(xlarge) {
-//     grid-template-columns: 1fr 1fr 1fr 1fr;
-// }
-// }
-
 @mixin rc-section {
     margin-top: 64px;
     margin-bottom: 64px;
@@ -95,12 +73,25 @@
     }
 }
 
+@mixin icon__search {
+    @include icon;
+    &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M20.5302 23.3586l-2.9525-2.9525 2.8284-2.8285 2.9525 2.9526zM9.1716 23.3137L.6864 14.8284 3.5148 12 12 20.4853l-2.8285 2.8284zM20.4854 12l-8.4853-8.4853L14.8285.6863l8.4853 8.4853L20.4854 12zM3.5146 12L.6862 9.1715 9.1715.6863l2.8284 2.8284z'/%3E%3Cpath d='M14.8284 23.3137l-2.8285-2.8284L20.4852 12l2.8285 2.8284-8.4853 8.4853z' fill='%23000'/%3E%3C/svg%3E");
+        width: 24px;
+        height: 24px;
+    }
+}
+
 /**
  * Text
  */
 
-@mixin text-s {
+@mixin text-xs {
     font-size: 12px;
+}
+
+@mixin text-s {
+    font-size: 14px;
 }
 
 @mixin text-m {
@@ -133,4 +124,8 @@
 
 @mixin capitalize {
     text-transform: capitalize;
+}
+
+@mixin tag {
+    @include text-s;
 }
