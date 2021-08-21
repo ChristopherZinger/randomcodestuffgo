@@ -6,7 +6,14 @@ Template Name: Home
 
 <?php get_header(); ?>
   <main class="content">
-    <h1 class="home__header h1">Main</h1> 
+    <?= get_template_part(
+      'template-parts/part', 
+      'homepage-hero', 
+      [
+        'title' => 'Hi, I am Chris!',
+        'style' => 'home__hero'
+      ]) 
+    ?>
 
     <?php get_template_part('template-parts/part-tags'); ?>
     <?php get_template_part('template-parts/part', 'series') ?>

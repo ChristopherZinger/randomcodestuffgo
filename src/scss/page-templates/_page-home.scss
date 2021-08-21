@@ -1,6 +1,7 @@
-.home__header {
+.home__hero {
     margin: 100px 0px;
     line-height: (48 / 48);
+    font-weight: 900;
 
     @include breakpoint(medium) {
         line-height: (80 / 80);
