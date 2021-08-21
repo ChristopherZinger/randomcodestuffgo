@@ -6,20 +6,22 @@ const { registerBlockType } = wp.blocks
 const { InnerBlocks } = wp.blockEditor
 
 export default () => {
-    registerBlockType('rc/grid-of-posts', {
-        title: __('Grid of posts', 'rc'),
-        description: __('Grid of posts', 'rc'),
+    registerBlockType('rc/section', {
+        title: __('Section', 'rc'),
+        description: __('Section', 'rc'),
         icon: {
             foreground: colors.red,
-            src: 'screenoptions',
+            src: 'editor-justify',
         },
         category: 'rc',
         attributes: {
-            pagesIds: {
-                type: 'array',
-                default: [],
-            },
-        },
+			sectionName: {
+				type: 'string',
+			},
+			sectionSlug: {
+				type: 'string'
+			}
+		},
         edit,
         save: (props) => <InnerBlocks.Content />,
     })

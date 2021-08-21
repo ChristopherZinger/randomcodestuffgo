@@ -1,0 +1,19 @@
+.rc-section {
+	margin: 0;
+	height: auto;
+
+}
+
+.rc-section:not(:last-child):not(:only-child) {
+	margin-bottom: $body-margin-large;
+}
+
+.rc-section > *:last-child {
+	margin-bottom: 0;
+}
+
+.rc-section__title {
+	font-size: 18px;
+	line-height: (28 / 18);
+	font-weight: 900;
+}

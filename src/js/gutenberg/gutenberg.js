@@ -1,7 +1,6 @@
 import initBlockStyles from './config/blockStyles'
-import gridOfPosts from './blocks/grid-of-posts'
 import postCard from './blocks/post-card'
-import sectionHeader from './blocks/section-header'
+import section from './blocks/section'
 
 const { __ } = wp.i18n
 const { setCategories, getCategories } = wp.blocks
@@ -24,6 +23,5 @@ setCategories([
 ])
 
 // Register blocks
-gridOfPosts()
 postCard()
-sectionHeader()
+section()

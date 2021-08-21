@@ -2,6 +2,7 @@
     margin: 100px 0px;
     line-height: (48 / 48);
     font-weight: 900;
+    text-transform: uppercase;
 
     @include breakpoint(medium) {
         line-height: (80 / 80);
