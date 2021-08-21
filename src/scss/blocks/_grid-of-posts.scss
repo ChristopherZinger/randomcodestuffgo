@@ -4,6 +4,6 @@
 
 div[data-type='rc/grid-of-posts'] {
     > .block-editor-inner-blocks > .block-editor-block-list__layout {
-        @include rc-grid-4321;
+        // @include rc-grid-4321;
     }
 }

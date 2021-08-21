@@ -1,11 +1,9 @@
 .social-media {
     display: flex;
-    align-items: center;
-    margin-top: $block-gutter-horizontal;
 }
 
 .social-media__icon {
-    position: relative;
+    display: inline-block;
     width: 20px;
     height: 20px;
 

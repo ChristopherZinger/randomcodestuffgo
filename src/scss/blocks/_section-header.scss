@@ -1,17 +1,5 @@
 .section-header {
     grid-template-columns: 0.5fr 0.5fr;
-
-    @include breakpoint(medium) {
-        grid-template-columns: 1fr 1fr !important;
-    }
-
-    @include breakpoint(large) {
-        grid-template-columns: 2fr 1fr !important;
-    }
-
-    @include breakpoint(xlarge) {
-        grid-template-columns: 3fr 1fr !important;
-    }
 }
 
 .section-header__button {
@@ -39,18 +27,6 @@ div[data-type='rc/section-header'] {
             margin: 0;
             display: flex;
             align-items: center;
-        }
-
-        @include breakpoint(medium) {
-            grid-template-columns: 1fr 1fr !important;
-        }
-
-        @include breakpoint(large) {
-            grid-template-columns: 2fr 1fr !important;
-        }
-
-        @include breakpoint(xlarge) {
-            grid-template-columns: 3fr 1fr !important;
         }
     }
 }

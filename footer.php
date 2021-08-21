@@ -1,6 +1,6 @@
-<footer class="grid-x footer">
-      <div class="cell medium-3 show-for-medium"></div>
-      <div class="cell small-12 medium-8 footer__content grid-x">
+<footer class="grid-x footer content">
+      <div class="cell large-3 show-for-large"></div>
+      <div class="cell small-12 large-8 footer__content grid-x">
         <div class="cell small-6">
           <?php
             wp_nav_menu(

@@ -26,3 +26,21 @@
         margin-right: $block-gutter-horizontal;
     }
 }
+
+.home__social-media {
+    display: flex;
+    flex-direction: column;
+}
+
+.home__social-media .social-media {
+    position: sticky;
+    height: 100px;
+    top: 50px;
+}
+
+.home__social-media h2 {
+    text-align: right;
+    margin-bottom: $block-gutter-horizontal;
+    padding-bottom: 4px;
+    border-bottom: 1px solid $color-black;
+}

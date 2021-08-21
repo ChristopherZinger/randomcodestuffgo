@@ -25,9 +25,7 @@
 <body class="<?= esc_attr($adminStyle); ?>">
     <div class="content" >
     <header class="primary-menu grid-x">
-        <div class="cell small-6 medium-1 primary-menu__menu-button-cell">
-          <div id="primary-menu__menu-button" class="show-for-small-only"></div>
-        </div>
+        <div class="cell small-6 medium-1 show-for-large"></div>
 
         <div class="cell auto">
           <?php
