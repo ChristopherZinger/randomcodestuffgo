@@ -5,5 +5,10 @@
     <?php the_content() ?>
 </main>
 
+<?php
+    global $post;
+
+    echo get_post_type($post);
+?>
 
 <?php get_footer(); ?>

@@ -4,7 +4,7 @@ const { InnerBlocks, InspectorControls } = wp.blockEditor
 const { TextControl, PanelBody } = wp.components
 
 const TEMPLATE = [
-    ['core/heading', { level: 6, className: 'section__title' }],
+    ['core/heading', { level: 6, className: 'rc-section__title' }],
     ['core/paragraph'],
 ]
 

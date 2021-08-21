@@ -1,4 +1,4 @@
-import { enableBodyScroll, disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
+import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 export default class {
     init() {
         this.menuButton = document.querySelector('.primary-menu__hamburger')

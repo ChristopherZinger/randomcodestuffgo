@@ -1,0 +1,35 @@
+.rc-post-content {
+	ul{
+		padding-left: 10px;
+
+		@keyframes mymove {
+			from {transform: translateY(-50%) rotate(0deg);}
+			to {transform: translateY(-50%) rotate(360deg);}
+		}
+
+		li {
+			position: relative;
+		}
+
+		li:hover::before {
+			animation: mymove 5s infinite;
+		}
+
+		li:before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-55%);
+			left: -10px;
+			height: 5px;
+			width: 5px;
+			background-color: $font-color;
+
+		}
+
+		li:not(:last-child):not(:only-child) {
+			margin-bottom: 10px ;
+		}
+	}
+}

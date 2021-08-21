@@ -1,0 +1,20 @@
+.rc-section__title + .accordion {
+	margin-top: 0;
+}
+
+.accordion {
+	border-bottom: 1px solid $font-color;
+}
+
+.accordion .wp-block {
+	margin: 0;
+}
+
+.accordion li, .accordion p, .accordion h6 {
+	@include text-s;
+}
+
+.accordion p {
+	margin: 0;
+	line-height: (28 / 14);
+}

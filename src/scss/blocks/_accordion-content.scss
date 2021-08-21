@@ -1,0 +1,22 @@
+.accordion__content {
+	overflow: hidden;
+	transition-duration: 0.5s;
+}
+
+.accordion__content > *:last-child {
+	padding-bottom: 20px;
+}
+
+@if ($editor == false) {
+	 .accordion__content {
+		max-height: 0;
+	}
+}
+
+
+@if ($editor) {
+	.accordion__content .wp-block {
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}
+}

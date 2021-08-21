@@ -6,6 +6,7 @@ class Blocks
 {
     public static function init()
     {
+        self::register('accordion', true);
         self::register('post-card', true);
         self::register('section', true);
     }

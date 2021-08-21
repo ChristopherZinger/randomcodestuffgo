@@ -1,6 +1,12 @@
 import initBlockStyles from './config/blockStyles'
 import postCard from './blocks/post-card'
 import section from './blocks/section'
+import accordion from './blocks/accordion'
+import accordionContent from './blocks/accordion/accordionContent'
+import accordionList from './blocks/accordionList'
+import SpecialList from './blocks/special-list'
+import SpecialListItem from './blocks/special-list/special-list-item'
+import accordionHeader from './blocks/accordion/accordionHeader'
 
 const { __ } = wp.i18n
 const { setCategories, getCategories } = wp.blocks
@@ -23,5 +29,11 @@ setCategories([
 ])
 
 // Register blocks
+accordion()
+accordionContent()
+accordionList()
+SpecialList()
+SpecialListItem()
+accordionHeader()
 postCard()
 section()

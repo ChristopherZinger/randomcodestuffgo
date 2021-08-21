@@ -1,7 +1,6 @@
 .rc-section {
 	margin: 0;
 	height: auto;
-
 }
 
 .rc-section:not(:last-child):not(:only-child) {
@@ -15,5 +14,27 @@
 .rc-section__title {
 	font-size: 18px;
 	line-height: (28 / 18);
-	font-weight: 900;
+	border-bottom: 1px solid $font-color;
+}
+
+.rc-section__title + * {
+	margin-top: 20px
+}
+
+/**
+ * Columns
+ */
+.rc-section .wp-block-columns:not(:last-child) {
+	margin-bottom: $block-gutter-horizontal;
+} 
+
+.rc-section .wp-block-columns:last-child {
+	margin-bottom: 0;
+}
+
+/**
+ * Text and Typography
+ */
+.rc-section p {
+	margin: 0;
 }
