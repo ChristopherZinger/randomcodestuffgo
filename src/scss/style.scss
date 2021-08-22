@@ -29,11 +29,16 @@ $editor: false;
 @import './rc-styles/rc-styles';
 
 /*
-* Pages
+* Templates 
 */
 @import './page-templates/page-contact';
 @import './page-templates/page-home';
 @import './page-templates/page-about';
+
+/**
+ * Pages
+ */
+@import './pages/_error-404';
 
 /*
 * Template Parts
