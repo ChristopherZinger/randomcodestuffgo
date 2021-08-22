@@ -17,10 +17,6 @@
 	border-bottom: 1px solid $font-color;
 }
 
-.rc-section__title + * {
-	margin-top: 20px
-}
-
 /**
  * Columns
  */
@@ -35,6 +31,13 @@
 /**
  * Text and Typography
  */
-.rc-section p {
+.rc-section > *  p {
 	margin: 0;
+}
+
+/**
+ * First Item after title
+ */
+.rc-section__title + * {
+	margin-top: 20px;
 }

@@ -1,5 +1,3 @@
-import { traversParentNodes } from './utils'
-
 export default class {
 	init () {
 		this.accordions = document.querySelectorAll('.accordion__header')
@@ -15,7 +13,6 @@ export default class {
 
 	openAccordionsFirstChild () {
 		this.accordionsFirstChildren.forEach(accordion => {
-			console.log(accordion)
 			accordion.style.maxHeight = accordion.scrollHeight + 'px'
 		})
 	}
@@ -32,7 +29,6 @@ export default class {
 	}
 
 	handleMaxHeight (target) {
-		console.log(target.style.maxHeight)
 		if (target && target.style.maxHeight) {
 			target.style.maxHeight = null;
 		  } else {
