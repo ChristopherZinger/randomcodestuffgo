@@ -1,7 +1,10 @@
 .card {
     position: relative;
-    margin-bottom: $block-gutter-horizontal;
     @include text-thin;
+}
+
+.card:not(:only-child) {
+    margin-bottom: $spacing-xl;
 }
 
 .card__text {
