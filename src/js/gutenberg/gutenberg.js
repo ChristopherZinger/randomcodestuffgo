@@ -4,6 +4,7 @@ import section from './blocks/section'
 import accordion from './blocks/accordion'
 import accordionContent from './blocks/accordion/accordionContent'
 import accordionList from './blocks/accordionList'
+import SelectableCategories from './blocks/selectable-categories'
 import SpecialList from './blocks/special-list'
 import SpecialListItem from './blocks/special-list/special-list-item'
 import accordionHeader from './blocks/accordion/accordionHeader'
@@ -32,6 +33,7 @@ setCategories([
 accordion()
 accordionContent()
 accordionList()
+SelectableCategories()
 SpecialList()
 SpecialListItem()
 accordionHeader()
