@@ -3,6 +3,7 @@ $editor: false;
 /**
  * Global
  */
+@import './global/variables';
 @import './global/settings';
 @import './global/colors';
 @import './global/global.scss';
@@ -40,6 +41,7 @@ $editor: false;
  */
 @import './pages/_error-404';
 @import './pages/search';
+@import './pages/post';
 
 /*
 * Template Parts
