@@ -1,6 +1,7 @@
 .card {
     position: relative;
     @include text-thin;
+    line-height: (25 / 16);
 }
 
 .card:not(:only-child) {

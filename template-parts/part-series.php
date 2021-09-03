@@ -13,9 +13,8 @@
 		
 		$parent = new WP_Query( $args );
 	}
-	
-
 ?>
+
 <div class="home-series section">
 	<?=
 	 	get_template_part('template-parts/part', 'home-section-header',
