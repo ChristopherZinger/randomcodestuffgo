@@ -1,34 +1,36 @@
 <?php 
-	$tagName = single_tag_title('', false);
-?>
-<?php 
 	$page_object = get_queried_object(); 
 	$categoryName = $page_object->cat_name;
 	$categoryID = $page_object->cat_ID;
-
-	$subCagetories = get_categories( ['child_of' => $categoryID] );
+	$categoryDescription = $page_object->description;
 ?>
 
 <?php get_header(); ?>
-  <main class="content">
-    <?= get_template_part(
-      'template-parts/part', 
-      'homepage-hero', 
-      [
+<main class="content content-category" data-category-id="<?= esc_attr($categoryID); ?>">
+    <?= get_template_part( 'template-parts/part', 'post-hero', [
         'title' => $categoryName,
-        'style' => 'home__hero'
-      ]) 
-    ?>
-
-	<p>[ category.php ]</p>
-    <div class="grid-x grid-margin-x latest-posts section">
-	<div class="cell medium-1 large-2 show-for-medium"></div>
-	<div class="cell small-12 medium-8 large-6">
-	<?php
-		foreach($subCagetories as $category) :
-			echo $category->name;
-		endforeach;
-	?>
+    ] ) ?>
+    <div class="grid-x">
+        <div class="cell medium-1 show-for-medium"></div>
+        <?php if (has_excerpt()) { ?>
+            <div class="cell small-12 medium-10 large-6 post__description">
+                <p class="post__description-text"><?= get_the_excerpt() ?></p>
+            </div>
+        <?php } ?>
     </div>
-  </main>
+    <div class="grid-x">
+        <div class="cell medium-1 large-3 show-for-medium"></div>
+        <div class="cell small-12 medium-10 large-6">
+			<div class="content-category__form">
+				<form id="searchform">
+					<input id="s" class="page-category__input" type="text" placeholder="<?= __('Search for post in this category.', 'rc') ?>">
+					<div id="searchsubmit" class="page-categoryß__clear-search-btn">clear
+					</div>
+				</form>
+			</div>
+			<div class="content-category__list-of-posts">
+			</div>
+        </div>
+    </div>
+</main>
 <?php get_footer(); ?>
