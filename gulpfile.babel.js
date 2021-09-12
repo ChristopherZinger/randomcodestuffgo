@@ -44,7 +44,8 @@ const config = {
             ' */\n',
     },
     components: [
-        path.join(__dirname, './node_modules/foundation-sites/scss')
+        path.join(__dirname, './node_modules/foundation-sites/scss'),
+        path.join(__dirname, './node_modules/tiny-slider/src')
     ]
 }
 
