@@ -1,11 +1,11 @@
 import { CategoryPicker } from "../../components/post-picker/categoryPicker"
 
-const { Button, PanelBody } = wp.components
+const { Button, PanelBody, ToggleControl } = wp.components
 const { withSelect } = wp.data
 const { __ } = wp.i18n
 const { InspectorControls } = wp.blockEditor
 
-export default withSelect((select, {attributes: {categoryIds}}) => {
+export default withSelect((select) => {
 	const categories = select('core').getEntityRecords(
 		'taxonomy', 
 		'category',
@@ -13,8 +13,15 @@ export default withSelect((select, {attributes: {categoryIds}}) => {
 	return {
 		categories
 	}
-})(({categories, setAttributes, attributes: {categoryIds}}) => {
-console.log(categories)
+})(({ 
+	categories, 
+	setAttributes, 
+	attributes: {
+		categoryIds, 
+		hideExcerpt, 
+		isHorizontal,
+		showSearchForm
+}}) => {
 	const addCategories = (categories=[]) => {
 		setAttributes({categoryIds: [
 			...categoryIds,
@@ -40,6 +47,28 @@ console.log(categories)
 				<PanelBody label={__('Add Section', 'rc')}>
 					<CategoryPicker 
 						onSave={(categories) => addCategories(categories)} 
+					/>
+				</PanelBody>
+				<PanelBody>
+					<ToggleControl 
+						label={__('Hide Excerpt', 'rc')}
+						checked={hideExcerpt} 
+						onChange={() => setAttributes({hideExcerpt: !hideExcerpt})}
+					/>
+				</PanelBody>
+				<PanelBody>
+					<ToggleControl 
+						label={__('Horizontal Display', 'rc')}
+						help={__('Horizontal display will have a header with link', 'rc')}
+						checked={isHorizontal} 
+						onChange={() => setAttributes({isHorizontal: !isHorizontal})}
+					/>
+				</PanelBody>
+				<PanelBody>
+					<ToggleControl 
+						label={__('Show Search Form', 'rc')}
+						checked={showSearchForm} 
+						onChange={() => setAttributes({showSearchForm: !showSearchForm})}
 					/>
 				</PanelBody>
 			</InspectorControls>

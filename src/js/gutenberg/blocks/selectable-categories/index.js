@@ -16,6 +16,18 @@ export default () => {
             categoryIds: {
                 type: 'array',
                 default: []
+            },
+            hideExcerpt: {
+                type: 'boolean',
+                default: false
+            },
+            isHorizontal: {
+                type: 'boolean',
+                default: false 
+            },
+            showSearchForm: {
+                type: 'boolean',
+                default: true
             }
         },
         edit,

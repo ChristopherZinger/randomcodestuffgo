@@ -32,10 +32,10 @@ setCategories([
 // Register blocks
 accordion()
 accordionContent()
+accordionHeader()
 accordionList()
+postCard()
 SelectableCategories()
 SpecialList()
 SpecialListItem()
-accordionHeader()
-postCard()
 section()

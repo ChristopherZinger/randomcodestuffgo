@@ -7,15 +7,15 @@ export default class PageSeries {
 		this.timer
 		this.categoryId = this.getCategoryId()
 
+		if (!this.input|| !this.categoryId) return
+
 		this.updateList()
-
-		if (!this.input) return
-
 		this.handleInput()
 	}
 
 	getCategoryId () {
 		const catContainer = document.querySelector('.content-category')
+		if(! catContainer) return
 		return catContainer.getAttribute('data-category-id')
 	}
 
@@ -54,8 +54,6 @@ export default class PageSeries {
 
 	handleInput () {
 		this.input.addEventListener('input', ({target: {value}}) => {
-			// this.controlTimer()
-
 			this.inputValue = value
 			this.updateList()
 		})

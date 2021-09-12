@@ -1,7 +1,11 @@
 export default class SelectableCategories {
 	init () {
 		const theBlock = document.querySelector('.selectable-categories')
-		if (!theBlock) return
+		this.form = document.querySelector('.selectable-categories__form-wrapper #searchform')
+
+		if (!theBlock || !this.form) return
+
+		this.preventSubmit()
 
 		this.cards = Array.from(
 			theBlock.querySelectorAll('.selectable-categories__item')
@@ -16,6 +20,10 @@ export default class SelectableCategories {
 
 		this.handleInput()
 		this.handleClear()
+	}
+
+	preventSubmit () {
+		this.form.addEventListener('submit', (e) => e.preventDefault() )
 	}
 
 	handleClear () {
