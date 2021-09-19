@@ -93,6 +93,15 @@ h6,
     }
 }
 
+p {
+    margin-bottom: 0;
+}
+
+.icon {
+    color: $font-color;
+    fill: $font-color;
+}
+
 .text-s {
     @include text-s;
 }
@@ -120,3 +129,4 @@ h6,
 .text-bold {
     @include text-bold;
 }
+
