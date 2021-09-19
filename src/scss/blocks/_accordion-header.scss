@@ -1,5 +1,6 @@
 .accordion__header {
 	padding: 10px 0px;
+	cursor: pointer;
 
 	@include breakpoint (medium) {
 		padding: 0;
