@@ -17,7 +17,7 @@
         <div class="cell large-1 show-for-large"></div>
         <div class="cell medium-4 large-3 show-for-medium">
             <div class="side-bar side-bar--sticky">
-                <?= get_template_part('template-parts/part', 'social-media'); ?>
+                <?= get_template_part('template-parts/part', 'share'); ?>
             <div class="sidebar-location-navigation"></div>
             </div>
         </div>
@@ -26,7 +26,6 @@
 
 <?php
     global $post;
-    echo get_post_type($post);
 ?>
 
 <?php get_footer(); ?>
