@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-  <main class="content">
+  <article class="content">
 	<div class="section">
 		<div class="error-404__404">404</div>
 		<div class="error-404__nothing-to-see">Nothing to see here.</div>
@@ -11,5 +11,5 @@
 			<?= get_search_form(); ?>
 		</div>
     </div>
-  </main>
+  </article>
 <?php get_footer(); ?>
