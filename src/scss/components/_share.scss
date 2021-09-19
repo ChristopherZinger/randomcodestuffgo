@@ -1,0 +1,10 @@
+.share__item .icon {
+	fill: $font-color;
+	width: rem-calc(20);
+	height: rem-calc(20);
+}
+
+.share__list {
+	display: flex;
+	column-gap: rem-calc(20);
+}
