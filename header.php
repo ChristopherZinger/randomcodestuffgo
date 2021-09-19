@@ -42,10 +42,15 @@
         </div>
 
         <div class="cell small-6 medium-3 primary-menu__icons">
-            <div class="primary-menu__hamburger show-for-small-only"></div>
+            <div class="primary-menu__toggle show-for-small-only">
+              <?= rcGetIcon('hamburger') ?>
+              <?= rcGetIcon('cancel') ?>
+            </div>
             <div class="primary-menu__color-mode show-for-medium"></div>
             <div class="primary-menu__search show-for-medium">
-              <a href="<?= esc_url($searchUrl); ?>"></a>
+              <a href="<?= esc_url($searchUrl); ?>">
+                <?= rcGetIcon('search'); ?>
+              </a>
             </div>
         </div>
     </header>
