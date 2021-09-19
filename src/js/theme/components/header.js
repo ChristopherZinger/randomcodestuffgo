@@ -1,7 +1,7 @@
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock'
 export default class {
     init() {
-        this.menuButton = document.querySelector('.primary-menu__hamburger')
+        this.menuButton = document.querySelector('.primary-menu__toggle')
         this.menu = document.querySelector('.primary-menu')
         this.rolledUpMenu = document.querySelector('#menu-primary-menu')
         this.openMenuStyle = 'primary-menu--open'

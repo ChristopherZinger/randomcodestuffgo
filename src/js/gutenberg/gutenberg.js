@@ -1,13 +1,15 @@
 import initBlockStyles from './config/blockStyles'
-import postCard from './blocks/post-card'
-import section from './blocks/section'
-import accordion from './blocks/accordion'
-import accordionContent from './blocks/accordion/accordionContent'
-import accordionList from './blocks/accordionList'
+import PostCard from './blocks/post-card'
+import Accordion from './blocks/accordion'
+import AccordionHeader from './blocks/accordion/accordionHeader'
+import AccordionContent from './blocks/accordion/accordionContent'
+import AccordionList from './blocks/accordionList'
+import NextPrevBtn from './blocks/next-prev-btn'
+import Section from './blocks/section'
 import SelectableCategories from './blocks/selectable-categories'
 import SpecialList from './blocks/special-list'
 import SpecialListItem from './blocks/special-list/special-list-item'
-import accordionHeader from './blocks/accordion/accordionHeader'
+import SeriesNavigationButtons from './blocks/series-navigation-buttons'
 
 const { __ } = wp.i18n
 const { setCategories, getCategories } = wp.blocks
@@ -30,12 +32,14 @@ setCategories([
 ])
 
 // Register blocks
-accordion()
-accordionContent()
-accordionHeader()
-accordionList()
-postCard()
+Accordion()
+AccordionContent()
+AccordionHeader()
+AccordionList()
+NextPrevBtn()
+PostCard()
 SelectableCategories()
 SpecialList()
 SpecialListItem()
-section()
+Section()
+SeriesNavigationButtons()
