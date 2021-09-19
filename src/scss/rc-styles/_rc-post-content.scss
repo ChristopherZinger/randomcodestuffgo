@@ -1,6 +1,18 @@
 .rc-post-content {
+	> * {
+		margin-top: 0;
+	}
+
+	> *:not(:last-child, h1, h2, h3, h4, h5, h6) {
+		margin-bottom: 40px;
+	}
+
+	> h1, h2, h3, h4, h5, h6 {
+		margin-bottom: 5px;
+	}
+
 	ul{
-		padding-left: 10px;
+		padding-left: 20px;
 
 		@keyframes mymove {
 			from {transform: translateY(-50%) rotate(0deg);}
@@ -11,25 +23,25 @@
 			position: relative;
 		}
 
-		li:hover::before {
-			animation: mymove 5s infinite;
-		}
-
 		li:before {
 			content: '';
 			display: block;
 			position: absolute;
 			top: 50%;
 			transform: translateY(-55%);
-			left: -10px;
-			height: 5px;
-			width: 5px;
+			left: -20px;
+			height: 2px;
+			width: 12px;
 			background-color: $font-color;
-
 		}
 
 		li:not(:last-child):not(:only-child) {
 			margin-bottom: 10px ;
 		}
+	}
+
+	a {
+		font-weight: bold;
+		text-decoration: underline;
 	}
 }
