@@ -7,9 +7,3 @@
 ?>
 
 <h6>Archive.php</h6>
-<?php
-	foreach($subCagetories as $category) :
-		var_dump($category);
-		
-	endforeach;
-?>
