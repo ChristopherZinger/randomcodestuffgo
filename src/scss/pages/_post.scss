@@ -1,0 +1,24 @@
+.post__hero {
+	margin: 50px 0;
+    line-height: (48 / 48);
+    font-weight: 900;
+    text-transform: uppercase;
+
+    @include breakpoint(medium) {
+        line-height: (80 / 80);
+		margin: 80px 0;
+    }
+}
+
+.post__description {
+	margin-bottom: 50px;
+
+	@include breakpoint (medium) {
+		margin-bottom: 80px;
+	}
+}
+
+.post__description-text {
+	font-weight: bold;
+	margin: 0;
+}

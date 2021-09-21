@@ -1,0 +1,45 @@
+.next-prev-btn {
+	display: flex;
+	column-gap: 20px;
+	position: relative;
+	flex-grow: 1;
+	justify-content: flex-end;
+}
+
+.next-prev-btn:hover .icon {
+	transform: translateX(10px);
+}
+
+.next-prev-btn__text {
+	text-align: right;
+	font-size: rem-calc(16);
+	margin-bottom: 8px;
+}
+
+.next-prev-btn .icon {
+	margin-left: 0;
+	margin-right: 0;
+	transition: all $transition;
+	height: 56px;
+	width: 32px;
+}
+
+/**
+ * is-backwards
+ */
+
+.next-prev-btn.is-backwards {
+	flex-direction: row-reverse;
+}
+
+.next-prev-btn.is-backwards:hover .icon {
+	transform: translateX(-10px) rotate(180deg);
+}
+
+.next-prev-btn.is-backwards .next-prev-btn__text {
+	text-align: left;
+}
+
+.next-prev-btn.is-backwards .icon {
+	transform: rotate(180deg);
+}

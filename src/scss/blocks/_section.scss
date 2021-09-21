@@ -1,0 +1,43 @@
+.rc-section {
+	margin: 0;
+	height: auto;
+}
+
+.rc-section:not(:last-child):not(:only-child) {
+	margin-bottom: $body-margin-large;
+}
+
+.rc-section > *:last-child {
+	margin-bottom: 0;
+}
+
+.rc-section__title {
+	font-size: 18px;
+	line-height: (28 / 18);
+	border-bottom: 1px solid $font-color;
+}
+
+/**
+ * Columns
+ */
+.rc-section .wp-block-columns:not(:last-child) {
+	margin-bottom: $block-gutter-horizontal;
+} 
+
+.rc-section .wp-block-columns:last-child {
+	margin-bottom: 0;
+}
+
+/**
+ * Text and Typography
+ */
+.rc-section > *  p {
+	margin: 0;
+}
+
+/**
+ * First Item after title
+ */
+.rc-section__title + * {
+	margin-top: 20px;
+}

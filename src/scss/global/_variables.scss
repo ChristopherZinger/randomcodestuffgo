@@ -1,0 +1,10 @@
+
+
+$spacing: 15px;
+$spacing-xs: 	calc(0.2 * #{$spacing}); 
+$spacing-s:  	calc(0.5 * #{$spacing});
+$spacing-m:  	calc(1.5 * #{$spacing});
+$spacing-l:  	calc(2 * #{$spacing});
+$spacing-xl:  	calc(3 * #{$spacing});
+$spacing-xxl:  	calc(4 * #{$spacing});
+$spacing-xxxl:  calc(5 * #{$spacing});

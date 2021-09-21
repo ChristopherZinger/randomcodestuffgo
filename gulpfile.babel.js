@@ -1,6 +1,7 @@
 import gulp from 'gulp'
 import sass from 'gulp-sass'
 import yargs from 'yargs'
+import path from 'path'
 import gulpif from 'gulp-if'
 import cleanCSS from 'gulp-clean-css'
 import sourcemaps from 'gulp-sourcemaps'
@@ -12,6 +13,10 @@ import rename from 'gulp-rename'
 import header from 'gulp-header'
 import pkg from './package.json'
 import notify from 'gulp-notify'
+import svgSprite from 'gulp-svg-sprite'
+import svgmin from 'gulp-svgmin'
+import cheerio from 'gulp-cheerio'
+import replace from 'gulp-replace'
 
 log('PRODUCTION: ' + yargs.argv.prod)
 
@@ -21,14 +26,15 @@ const config = {
         js: './src/js/**/*.js',
         sass: './src/scss/**/*.scss',
         // img: ['./src/images/**/*', '!./src/images/**/*.svg'],
-        // svg: ['./src/svg/**/*.svg'],
+        svg: ['./src/svg/**/*.svg'],
+        svgIcons: './src/svg/icons/**/*.svg'
     },
     dist: {
         base: './assets',
         js: './assets/js',
         css: './',
         // img: './assets/images',
-        // svg: './assets/svg',
+        svg: './assets/svg',
     },
     banner: {
         theme:
@@ -42,19 +48,17 @@ const config = {
             ' * Text Domain: <%= pkg.name %>\n' +
             ' */\n',
     },
+    components: [
+        path.join(__dirname, './node_modules/foundation-sites/scss'),
+        path.join(__dirname, './node_modules/tiny-slider/src')
+    ]
 }
 
-// export const scss = () => {
-//     return gulp
-//         .src(config.src.sass)
-//         .pipe(gulpif(!config.production, sourcemaps.init()))
-//         .pipe(sass().on('error', sass.logError))
-//         .pipe(gulpif(config.production, cleanCSS({ compatibility: 'i8' })))
-//         .pipe(gulpif(!config.production, sourcemaps.write()))
-//         .pipe(header(config.banner.theme, { pkg }))
-//         .pipe(rename('style.css'))
-//         .pipe(gulp.dest(config.dist.css))
-// }
+// Copy JS
+const copyJs = () => {
+    const items = ['./node_modules/foundation-sites/dist/js/foundation.min.js']
+    return gulp.src(items).pipe(gulp.dest(config.dist.js))
+}
 
 const js = (done) => {
     const combinedConfig = {
@@ -106,10 +110,74 @@ function css() {
         .pipe(notify({ title: 'SCSS', message: 'Sass compiled successfully!' }))
 }
 
+
+// Minify SVG
+function minifySVG () {
+    return gulp
+        .src(config.src.svg)
+        // minify svg
+        .pipe(svgmin({
+            js2svg: {
+                pretty: false
+            }
+        }))
+        // remove all fill, style and stroke declarations in out shapes
+        .pipe(cheerio({
+            run: function ($) {
+                // $('[fill]').removeAttr('fill');
+                // $('[stroke]').removeAttr('stroke');
+                // $('[style]').removeAttr('style');
+            },
+            parserOptions: {xmlMode: true}
+        }))
+        // cheerio plugin create unnecessary string '&gt;', so replace it.
+        .pipe(replace('&gt;', '>'))
+        .pipe(
+            rename(path => {
+                path.basename = `inline-${path.basename}.svg`
+                path.extname = '.php'
+            })
+        )
+        .pipe(gulp.dest(config.dist.svg))
+}
+
+export function svg () { 
+    console.log('Create Svg Sprite.')
+        return gulp.src(config.src.svgIcons)
+            // minify svg
+            .pipe(svgmin({
+                js2svg: {
+                    pretty: false
+                }
+            }))
+            // remove all fill, style and stroke declarations in out shapes
+            .pipe(cheerio({
+                run: function ($) {
+                    $('[fill]').removeAttr('fill');
+                    $('[stroke]').removeAttr('stroke');
+                    $('[style]').removeAttr('style');
+                },
+                parserOptions: {xmlMode: true}
+            }))
+            // cheerio plugin create unnecessary string '&gt;', so replace it.
+            .pipe(replace('&gt;', '>'))
+            // build svg sprite
+            .pipe(svgSprite({
+                mode: {
+                    symbol: {
+                        dest: '.',
+                        sprite: 'sprite.svg'
+                    }
+                }
+              }))
+            .on('Error', e => console.log('ERROR: ', e))
+            .pipe(gulp.dest(config.dist.svg));
+}
+
 const watch = () => {
     gulp.watch(config.src.js, js)
     gulp.watch(config.src.sass, css)
 }
 
-gulp.task('default', gulp.series(gulp.parallel(css, js), watch))
-gulp.task('build', gulp.parallel(css, js))
+gulp.task('default', gulp.series(copyJs, gulp.parallel(css, js), watch))
+gulp.task('build', gulp.series(copyJs, gulp.parallel(css, js, svg, minifySVG)))

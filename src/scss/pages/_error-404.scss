@@ -1,0 +1,20 @@
+.error-404__404 {
+	@include font-raleway-bold;
+	font-size: 100px;
+	line-height: (200 / 200);
+
+	@include breakpoint (medium) {
+		font-size: 200px;
+	}
+}
+
+.error-404__nothing-to-see {
+	@include font-raleway-medium;
+	font-size: 18px;
+	line-height: (48 / 48);
+	margin-top: $block-gutter-horizontal;
+
+	@include breakpoint (medium) {
+		font-size: 28px;
+	}
+}

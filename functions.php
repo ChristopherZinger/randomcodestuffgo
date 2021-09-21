@@ -50,7 +50,8 @@ class RCTheme
   {
     $version = wp_get_theme()->get( 'Version' );
 
-    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Inter&display=swap', false );
+    wp_enqueue_style( 'wpb-google-fonts', 'https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap', false );
+    wp_enqueue_style( 'wpb-google-fonta', 'https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap', false);
 
     wp_enqueue_style(
       'rc_stylesheet', 
@@ -129,7 +130,8 @@ class RCTheme
   {
     $locations = array(
       'primary' => 'Primary Menu',
-      'footer' => 'Footer Meny'
+      'footer-left' => 'Footer Menu Left',
+      'footer-right' => 'Footer Menu Right'
     );
   
     register_nav_menus($locations);
