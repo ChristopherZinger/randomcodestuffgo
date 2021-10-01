@@ -4,7 +4,7 @@ const { Fragment, useState } = wp.element
 const { InnerBlocks } = wp.blockEditor
 
 const ALLOWEDBLOKCS = ['rc/post-card']
-const TEMPLATE = [['rc/post-card']]
+const TEMPLATE = [['core/heading'], ['rc/post-card']]
 
 export default () => {
     return (
