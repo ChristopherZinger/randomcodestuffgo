@@ -1,3 +1,17 @@
+<?php
+  $current_user = wp_get_current_user();
+  $adminIsLoggedIn = false;
+  if (user_can( $current_user, 'administrator' )) {
+    $adminIsLoggedIn = true;
+  }
+
+  $adminStyle = $adminIsLoggedIn ? 'is-logged--admin' : '';
+
+
+  $wpSiteUrl = get_site_url();
+  $searchUrl = "{$wpSiteUrl}/?s=";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,39 +22,36 @@
     wp_head();
   ?>
 </head>
-<body>
+<body class="<?= esc_attr($adminStyle); ?>">
     <div class="content" >
-    <header class="primary-menu">
-      <div class="primary-menu__content-left">
-        <div class="menu-item">
-          <a>
-          Home
-          </a>
-        </div>
-      </div>
+    <header class="primary-menu grid-x">
+        <div class="cell small-6 medium-1 show-for-large"></div>
 
-      <?php
-        wp_nav_menu(
-          array(
-            'menu' => 'primary',
-            'container' => '',
-            'theme_location' => 'primary',
-            'menu_class' => 'primary-menu__content-middle',
-            'depth' => '1'
-          )
-        )
-      ?>
-
-      <div class="primary-menu__content-right">
-        <div class="primary-menu__info menu-item">
-          <a>
-          Info
-          </a>
+        <div class="cell auto">
+          <?php
+            wp_nav_menu(
+              array(
+                'menu' => 'primary',
+                'container' => '',
+                'theme_location' => 'primary',
+                'menu_class' => 'primary-menu__items-left',
+                'depth' => '2'
+              )
+            )
+          ?>
         </div>
 
-        <div class="primary-menu__mobile-button menu-item">
-          menu
+        <div class="cell small-6 medium-3 primary-menu__icons">
+            <div class="primary-menu__toggle show-for-small-only">
+              <?= rcGetIcon('hamburger') ?>
+              <?= rcGetIcon('cancel') ?>
+            </div>
+            <div class="primary-menu__color-mode show-for-medium"></div>
+            <div class="primary-menu__search show-for-medium">
+              <a href="<?= esc_url($searchUrl); ?>">
+                <?= rcGetIcon('search'); ?>
+              </a>
+            </div>
         </div>
-      </div>
     </header>
   </div> <!-- primary menu wrapper -->

@@ -1,0 +1,19 @@
+div[data-type='rc/post-card'] {
+    margin: 0;
+
+    .post-card {
+        height: 100%;
+        width: 100%;
+    }
+
+    .post-card--empty {
+        border: 1px dashed $color-black;
+
+        min-height: 200px;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

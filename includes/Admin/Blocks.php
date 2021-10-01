@@ -6,7 +6,12 @@ class Blocks
 {
     public static function init()
     {
-        self::register('list-three-pages', true, array( 'pagesIds' => [] ));
+        self::register('selectable-categories', true);
+        self::register('accordion', true);
+        self::register('post-card', true);
+        self::register('section', true);
+        self::register('next-prev-btn', true);
+        self::register('series-navigation-buttons', true);
     }
 
     public static function register($block_name, $server_side = false, array $attributes = [], $namespace = 'rc')

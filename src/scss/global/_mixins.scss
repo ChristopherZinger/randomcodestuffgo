@@ -1,3 +1,90 @@
-@mixin tag {
+@mixin rc-section {
+    margin-top: 64px;
+    margin-bottom: 64px;
+}
+
+@mixin button {
+    background-color: transparent;
+    text-decoration: none;
+    color: $color-black;
+    border-radius: 0;
+
+    &:hover,
+    &:active,
+    &:visited {
+        background-color: transparent;
+        text-decoration: none;
+        color: $color-black;
+    }
+}
+
+@mixin icon {
+    position: relative;
+    &::after {
+        content: '';
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+@mixin icon__arrow-down {
+    @include icon;
+    &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23000' d='M8 8h4v4H8zM12 4h4v4h-4zM4 4h4v4H4zM0 0h4v4H0zM16 0h4v4h-4z'/%3E%3C/svg%3E");
+        width: 20px;
+        height: 12px;
+    }
+}
+
+/**
+ * Text
+ */
+
+@mixin text-xs {
     font-size: 12px;
+    line-height: (18 / 12);
+}
+
+@mixin text-s {
+    font-size: 14px;
+    line-height: (18 / 12);
+}
+
+@mixin text-m {
+    font-size: 16px;
+    line-height: (18 / 12);
+}
+
+@mixin text-l {
+    font-size: 20px;
+    line-height: (18 / 12);
+}
+
+@mixin text-thin {
+    font-weight: 300;
+}
+
+@mixin text-regular {
+    font-weight: 500;
+}
+
+@mixin text-medium {
+    font-weight: 400;
+}
+
+@mixin text-bold {
+    font-weight: 600;
+}
+
+@mixin upper-case {
+    text-transform: uppercase;
+}
+
+@mixin capitalize {
+    text-transform: capitalize;
+}
+
+@mixin tag {
+    @include text-s;
 }

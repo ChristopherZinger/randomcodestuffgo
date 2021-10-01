@@ -1,61 +1,132 @@
 body {
-  font-family: 'Inter', sans-serif;
-  color: black;
+    @include font-raleway-regular;
+    @include text-m;
 }
 
-a, a:hover, a:active, a:visited {
-  text-decoration: none;
-  color: black;
+a,
+a:hover,
+a:active,
+a:visited {
+    text-decoration: none;
+    color: $font-color;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  @include font-inter-regular;
+.is-dark-mode {
+    a,
+    a:hover,
+    a:active,
+    a:visited {
+        text-decoration: none;
+        color: $font-color-dark-mode;
+    }
 }
 
-h1, .h1 {
-  font-size: 40px;
-
-  @include breakpoint (large) {
-    font-size: 70px;
-  }
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    margin: 0;
+    @include font-inter-regular;
 }
 
-h2, .h2 {
-  font-size: 35px;
+h1,
+.h1 {
+    font-size: 48px;
 
-  @include breakpoint (large) {
-    font-size: 60px;
-  }
+    @include breakpoint(large) {
+        font-size: 80px;
+    }
 }
 
-h3, .h3 {
-  font-size: 30px;
+h2,
+.h2 {
+    font-size: 35px;
 
-  @include breakpoint (large) {
-    font-size: 50px;
-  }
+    @include breakpoint(large) {
+        font-size: 60px;
+    }
 }
 
-h4, .h4 {
-  font-size: 27px;
+h3,
+.h3 {
+    font-size: 30px;
 
-  @include breakpoint (large) {
-    font-size: 40px;
-  }
+    @include breakpoint(large) {
+        font-size: 50px;
+    }
 }
 
-h5, .h5 {
-  font-size: 22px;
+h4,
+.h4 {
+    font-size: 27px;
 
-  @include breakpoint (large) {
-    font-size: 32px;
-  }
+    @include breakpoint(large) {
+        font-size: 40px;
+    }
 }
 
-h6, .h6 {
-  font-size: rem-calc(18);
+h5,
+.h5 {
+    font-size: 22px;
 
-  @include breakpoint (large) {
-    font-size: rem-calc(24);
-  }
+    @include breakpoint(large) {
+        font-size: 28px;
+    }
 }
+
+h6,
+.h6 {
+    font-size: 18px;
+    @include upper-case;
+    @include font-raleway-medium;
+
+    @include breakpoint(large) {
+        font-size: 18px;
+    }
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.icon {
+    color: $font-color;
+    fill: $font-color;
+}
+
+.text-s {
+    @include text-s;
+}
+
+.text-m {
+    @include text-m;
+}
+
+.text-l {
+    @include text-l;
+}
+
+.text-thin {
+    @include text-thin;
+}
+
+.text-regular {
+    @include text-regular;
+}
+
+.text-medium {
+    @include text-medium;
+}
+
+.text-bold {
+    @include text-bold;
+}
+

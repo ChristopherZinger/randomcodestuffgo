@@ -1,0 +1,22 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+}
+
+.page-numbers {
+    border: 1px solid $font-color;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    margin: 15px;
+}
+
+.page-numbers.current {
+    background-color: $font-color;
+    color: $color-bg;
+}

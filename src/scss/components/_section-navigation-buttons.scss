@@ -1,0 +1,7 @@
+.series-navigation-buttons {
+	display: flex;
+	flex-wrap: wrap;
+	
+	// justify-content: center;
+	row-gap: rem-calc(40);
+}

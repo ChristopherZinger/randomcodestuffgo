@@ -2,4 +2,7 @@
 node_modules
 assets
 style.css
+editor-style.css
+admin.css
+
 .vscode-upload.json

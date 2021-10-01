@@ -1,0 +1,23 @@
+.special-list-item:not(:last-child) {
+	margin-bottom: 15px;
+}
+
+.special-list-item > .wp-block-group__inner-container {
+    display: flex;
+}
+
+.special-list-item p {
+	margin: 0;
+	line-height: (28 / 14);
+}
+
+.special-list-item__bullet {
+	width: 130px;
+	margin-right: $block-gutter;
+	text-transform: initial;
+	padding-left: 10px;
+}
+
+.special-list-item__content {
+	flex-grow: 1;
+}

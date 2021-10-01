@@ -1,0 +1,18 @@
+.side-bar--sticky {
+	position: sticky;
+	top: 20px;
+}
+
+.location-nav-item {
+	margin: 15px 0;	
+	cursor: pointer;
+	transition-duration: 0.2s;
+	transition-timing-function: ease-in;
+	margin-left: 0;
+	text-transform: capitalize;
+}
+
+.location-nav-item.is-active {
+	text-decoration: underline;
+	margin-left: 10px;
+}

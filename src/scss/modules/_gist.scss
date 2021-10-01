@@ -1,0 +1,19 @@
+.gist * {
+	background-color: $color-bg;
+}
+
+.gist .gist-file {
+	border: none !important;
+	border-radius: 0 !important;
+}
+
+.gist-meta {
+	background-color: $color-bg !important;
+}
+
+.gist .gist-data {
+	border: 2px dashed $color-light-grey !important;
+	border-radius: 0 !important;
+	padding: 10px;
+	background-color: $color-bg !important;
+}
