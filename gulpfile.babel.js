@@ -19,6 +19,7 @@ import cheerio from 'gulp-cheerio'
 import replace from 'gulp-replace'
 
 log('### Compilation Type: ', yargs.argv.env)
+process.env.DISABLE_NOTIFIER = true
 
 const config = {
     production: yargs.argv.env === 'production',
