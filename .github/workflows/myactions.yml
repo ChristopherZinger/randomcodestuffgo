@@ -1,20 +1,27 @@
-name: GitHub Actions Demo
+name: randomcodestuffgo - live
+# on:
+#     push:
+#         branches:
+#             - masteron: [push]
 on:
     push:
         branches:
-            - masteron: [push]
+            - develop
 jobs:
     build:
         runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node: ['12', '14']
-        name: Node ${{ matrix.node }} sample
+        # strategy:
+        #     matrix:
+        #         node: ['12', '14']
+        # name: Node ${{ matrix.node }} sample
+        name: Node 14 sample
         steps:
             - uses: actions/checkout@v2
             - name: Setup node
               uses: actions/setup-node@v2
               with:
-                  node-version: ${{ matrix.node }}
+                  # node-version: ${{ matrix.node }}
+                  node-version: 14
             - run: npm install
+            - run: npm run build
             - run: npm test
