@@ -25,4 +25,3 @@ jobs:
             - run: npm install
             - run: npm install notify-send
             - run: npm run build
-            - run: npm test
