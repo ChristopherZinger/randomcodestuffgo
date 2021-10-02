@@ -61,7 +61,7 @@ const copyJs = () => {
     return gulp.src(items).pipe(gulp.dest(config.dist.js))
 }
 
-const js = () => {
+const js = (done) => {
     const combinedConfig = {
         mode: config.production ? 'production' : 'development',
         watch: !config.production,
@@ -80,6 +80,7 @@ const js = () => {
                 progress: true,
             })
         )
+        done()
     })
 }
 
