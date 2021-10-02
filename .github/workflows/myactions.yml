@@ -18,11 +18,11 @@ jobs:
         steps:
             - uses: actions/checkout@v2
             - name: Setup node
-              uses: actions/setup-node@v2
+            - uses: actions/setup-node@v2
               with:
                   # node-version: ${{ matrix.node }}
                   node-version: 14
             - run: npm install
-          - run: npm install notify-send
+            - run: npm install notify-send
             - run: npm run build
             - run: npm test
