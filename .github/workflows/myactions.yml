@@ -10,14 +10,12 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
-        name: Prepare Ubuntu
-        steps:
-          - run: sudo apt-add-repository ppa:izx/askubuntu
-          - run: sudo apt-get update
-          - run: sudo apt-get install libnotify-bin
         name: Node 14 sample
         steps:
             - uses: actions/checkout@v2
+            - run: sudo apt-add-repository ppa:izx/askubuntu
+            - run: sudo apt-get update
+            - run: sudo apt-get install libnotify-bin
             - name: Setup node
               uses: actions/setup-node@v2
               with:
