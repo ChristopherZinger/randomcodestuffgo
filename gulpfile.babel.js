@@ -18,16 +18,16 @@ import svgmin from 'gulp-svgmin'
 import cheerio from 'gulp-cheerio'
 import replace from 'gulp-replace'
 
-log('PRODUCTION: ' + yargs.argv.prod)
+log('### Compilation Type: ', yargs.argv.env)
 
 const config = {
-    production: yargs.argv.prod,
+    production: yargs.argv.env === 'production',
     src: {
         js: './src/js/**/*.js',
         sass: './src/scss/**/*.scss',
         // img: ['./src/images/**/*', '!./src/images/**/*.svg'],
         svg: ['./src/svg/**/*.svg'],
-        svgIcons: './src/svg/icons/**/*.svg'
+        svgIcons: './src/svg/icons/**/*.svg',
     },
     dist: {
         base: './assets',
@@ -50,8 +50,8 @@ const config = {
     },
     components: [
         path.join(__dirname, './node_modules/foundation-sites/scss'),
-        path.join(__dirname, './node_modules/tiny-slider/src')
-    ]
+        path.join(__dirname, './node_modules/tiny-slider/src'),
+    ],
 }
 
 // Copy JS
@@ -60,14 +60,14 @@ const copyJs = () => {
     return gulp.src(items).pipe(gulp.dest(config.dist.js))
 }
 
-const js = (done) => {
+const js = () => {
     const combinedConfig = {
         mode: config.production ? 'production' : 'development',
         watch: !config.production,
         ...webpackConfig,
     }
 
-    const x = webpack(combinedConfig, (error, stats) => {
+    webpack(combinedConfig, (error, stats, ...args) => {
         if (error) {
             console.log(error)
         }
@@ -80,8 +80,6 @@ const js = (done) => {
             })
         )
     })
-
-    done()
 }
 
 function css() {
@@ -110,68 +108,82 @@ function css() {
         .pipe(notify({ title: 'SCSS', message: 'Sass compiled successfully!' }))
 }
 
-
 // Minify SVG
-function minifySVG () {
-    return gulp
-        .src(config.src.svg)
-        // minify svg
-        .pipe(svgmin({
-            js2svg: {
-                pretty: false
-            }
-        }))
-        // remove all fill, style and stroke declarations in out shapes
-        .pipe(cheerio({
-            run: function ($) {
-                // $('[fill]').removeAttr('fill');
-                // $('[stroke]').removeAttr('stroke');
-                // $('[style]').removeAttr('style');
-            },
-            parserOptions: {xmlMode: true}
-        }))
-        // cheerio plugin create unnecessary string '&gt;', so replace it.
-        .pipe(replace('&gt;', '>'))
-        .pipe(
-            rename(path => {
-                path.basename = `inline-${path.basename}.svg`
-                path.extname = '.php'
-            })
-        )
-        .pipe(gulp.dest(config.dist.svg))
+function minifySVG() {
+    return (
+        gulp
+            .src(config.src.svg)
+            // minify svg
+            .pipe(
+                svgmin({
+                    js2svg: {
+                        pretty: false,
+                    },
+                })
+            )
+            // remove all fill, style and stroke declarations in out shapes
+            .pipe(
+                cheerio({
+                    run: function ($) {
+                        // $('[fill]').removeAttr('fill');
+                        // $('[stroke]').removeAttr('stroke');
+                        // $('[style]').removeAttr('style');
+                    },
+                    parserOptions: { xmlMode: true },
+                })
+            )
+            // cheerio plugin create unnecessary string '&gt;', so replace it.
+            .pipe(replace('&gt;', '>'))
+            .pipe(
+                rename((path) => {
+                    path.basename = `inline-${path.basename}.svg`
+                    path.extname = '.php'
+                })
+            )
+            .pipe(gulp.dest(config.dist.svg))
+    )
 }
 
-export function svg () { 
+export function svg() {
     console.log('Create Svg Sprite.')
-        return gulp.src(config.src.svgIcons)
+    return (
+        gulp
+            .src(config.src.svgIcons)
             // minify svg
-            .pipe(svgmin({
-                js2svg: {
-                    pretty: false
-                }
-            }))
+            .pipe(
+                svgmin({
+                    js2svg: {
+                        pretty: false,
+                    },
+                })
+            )
             // remove all fill, style and stroke declarations in out shapes
-            .pipe(cheerio({
-                run: function ($) {
-                    $('[fill]').removeAttr('fill');
-                    $('[stroke]').removeAttr('stroke');
-                    $('[style]').removeAttr('style');
-                },
-                parserOptions: {xmlMode: true}
-            }))
+            .pipe(
+                cheerio({
+                    run: function ($) {
+                        $('[fill]').removeAttr('fill')
+                        $('[stroke]').removeAttr('stroke')
+                        $('[style]').removeAttr('style')
+                    },
+                    parserOptions: { xmlMode: true },
+                })
+            )
             // cheerio plugin create unnecessary string '&gt;', so replace it.
             .pipe(replace('&gt;', '>'))
             // build svg sprite
-            .pipe(svgSprite({
-                mode: {
-                    symbol: {
-                        dest: '.',
-                        sprite: 'sprite.svg'
-                    }
-                }
-              }))
-            .on('Error', e => console.log('ERROR: ', e))
-            .pipe(gulp.dest(config.dist.svg));
+            .pipe(
+                svgSprite({
+                    mode: {
+                        symbol: {
+                            dest: '.',
+                            sprite: 'sprite.svg',
+                        },
+                    },
+                })
+            )
+            .on('Error', (e) => console.log('ERROR: ', e))
+            .pipe(gulp.dest(config.dist.svg))
+    )
 }
 
 const watch = () => {
