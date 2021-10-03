@@ -22,15 +22,23 @@ jobs:
             - name: NPM - run build
               run: npm run build
             - name: Deploy to Server
-              uses: easingthemes/ssh-deploy@main
-              env:
-                  SSH_PRIVATE_KEY: ${{ secrets.DIGITALOCEAN_SSH_PRIV }}
-                  ARGS: '-rltgoDzvO --delete'
-                  SOURCE: '/'
-                  REMOTE_HOST: ${{ secrets.HOST_IP }}
-                  REMOTE_USER: ${{ secrets.HOST_USER }}
-                  TARGET: /var/www/randomcodestuffgo.xyz/wp-content/themes/rc-theme/
-                  EXCLUDE: '/src/, /node_modules/'
+              uses: appleboy/ssh-action@v0.1.2
+              with:
+                  host: ${{secrets.HOST_IP}}
+                  key: ${{secrets.DIGITALOCEAN_SSH_PRIV}}
+                  username: ${{secrets.HOST_USER}}
+                  script: |
+                      whoami
+                      ls -al
+              # uses: easingthemes/ssh-deploy@main
+              # env:
+              #     SSH_PRIVATE_KEY: ${{ secrets.DIGITALOCEAN_SSH_PRIV }}
+              #     ARGS: '-rltgoDzvO --delete'
+              #     SOURCE: '/'
+              #     REMOTE_HOST: ${{ secrets.HOST_IP }}
+              #     REMOTE_USER: ${{ secrets.HOST_USER }}
+              #     TARGET: /var/www/randomcodestuffgo.xyz/wp-content/themes/rc-theme/
+              #     EXCLUDE: '/src/, /node_modules/'
     # deploy:
     #     - name: Install SSH Key
     #       uses: shimataro/ssh-key-action@v2
