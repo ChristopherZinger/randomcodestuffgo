@@ -18,9 +18,9 @@ jobs:
               with:
                   node-version: 14
             - name: prep system
-              steps: 
-                - run: sudo apt-get update
-                - run: sudo apt-get install libnotify-bin
+                run: sudo apt-get update
+            - name: prep system 2 
+                run: sudo apt-get install libnotify-bin
             - name: NPM install packages 
                   run: npm install
             - name: run npm build
