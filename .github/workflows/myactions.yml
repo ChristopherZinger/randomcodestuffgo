@@ -19,9 +19,7 @@ jobs:
                   node-version: 14
               run: sudo apt-get update
               run: sudo apt-get install libnotify-bin
-            - name: Install dependencies
               run: npm install
-            - name: Run npm build
               run: npm run build
     # deploy:
     #     - name: Install SSH Key
