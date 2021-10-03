@@ -17,8 +17,10 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   node-version: 14
+            - name: prep system
               run: sudo apt-get update
               run: sudo apt-get install libnotify-bin
+            - name: do npm stuff
               run: npm install
               run: npm run build
     # deploy:
