@@ -23,11 +23,11 @@ jobs:
               run: npm run build
             - name: Deploy to Server
               uses: appleboy/ssh-action@v0.1.2
-              debug: true
               with:
                   host: ${{secrets.HOST_IP}}
                   key: ${{secrets.DIGITALOCEAN_SSH_PRIV}}
                   username: ${{secrets.HOST_USER}}
+                  debug: true
                   script: |
                       whoami
                       ls -al
