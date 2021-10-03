@@ -17,12 +17,12 @@ jobs:
               uses: actions/setup-node@v2
               with:
                   node-version: 14
-            - run: sudo apt-get update
-            - run: sudo apt-get install libnotify-bin
+              run: sudo apt-get update
+              run: sudo apt-get install libnotify-bin
             - name: Install dependencies
-            - run: npm install
+              run: npm install
             - name: Run npm build
-            - run: npm run build
+              run: npm run build
     # deploy:
     #     - name: Install SSH Key
     #       uses: shimataro/ssh-key-action@v2
