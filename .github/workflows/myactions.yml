@@ -28,7 +28,9 @@ jobs:
             - name: create ssh file
               run: touch temp_ssh
             - name: add ssh key to temp_ssh
-              run: cat '${{ DIGITALOCEAN_SSH_PRIV }}' >> temp_ssh
+              run: 'cat "$SSH_KEY" >> temp_ssh'
+              env:
+                  SSH_KEY: ${{ DIGITALOCEAN_SSH_PRIV }}
             - name: list files
               run: ls -a
             - name: transfer files to digital ocean
