@@ -21,14 +21,24 @@ jobs:
               run: npm install
             - name: NPM - run build
               run: npm run build
-            - name: install rsync
-              run: sudo apt install rsync grsync
-            - name: create ssh file
-              run: touch temp_ssh
-            - name: add ssh key to temp_ssh
-              run: 'echo "$SSH_KEY" > temp_ssh'
-              shell: bash
-              env:
-                  SSH_KEY: ${{ secrets.DIGITALOCEAN_SSH_PRIV }}
-            - name: transfer files to digital ocean
-              run: rsync -a -e "ssh -i temp_ssh" ./ chris@randomcodestuffgo.xyz:/var/www/randomcodestuffgo.xyz/wp-content/themes/rc-theme
+            # - name: install rsync
+            #   run: sudo apt install rsync grsync
+            # - name: create ssh file
+            #   run: touch temp_ssh
+            # - name: add ssh key to temp_ssh
+            #   run: 'echo "$SSH_KEY" > temp_ssh'
+            #   shell: bash
+            #   env:
+            #       SSH_KEY: ${{ secrets.DIGITALOCEAN_SSH_PRIV }}
+            # - name: transfer files to digital ocean
+            #   run: rsync -a -e "ssh -i temp_ssh" ./ chris@randomcodestuffgo.xyz:/var/www/randomcodestuffgo.xyz/wp-content/themes/rc-theme
+            - name: rsync deployments
+              uses: burnett01/rsync-deployments@5.1
+              with:
+                  switches: -avzr --delete
+                  path: ./
+                  remote_path: /var/www/randomcodestuffgo.xyz/wp-content/themes/rc-theme
+                  remote_host: ${{ secrets.HOST_DOMAIN }}
+                  remote_port: 22
+                  remote_user: chris
+                  remote_key: ${{ secrets.DIGITALOCEAN_SSH_PRIV }}
