@@ -25,8 +25,14 @@ jobs:
               run: ls -a
             - name: install rsync
               run: sudo apt install rsync grsync
+            - name: create ssh file
+              run: touch temp_ssh
+            - name: add ssh key to temp_ssh
+              run: cat '${{ DIGITALOCEAN_SSH_PRIV }}' >> temp_ssh
+            - name: list files
+              run: ls -a
             - name: transfer files to digital ocean
-              run: rsync -a -e "ssh -i ${{ DIGITALOCEAN_SSH_PRIV }}" ./ ${{ HOST_USER }}@${{ HOST_DOMAIN }}:/var/www/randomcodestuffgo.xyz/wp-content/themes/rc-theme
+              run: rsync -a -e "ssh -i ./temp_ssh" ./ ${{ HOST_USER }}@${{ HOST_DOMAIN }}:/var/www/randomcodestuffgo.xyz/wp-content/themes/rc-theme
               # uses: easingthemes/ssh-deploy@main
               # env:
               #     SSH_PRIVATE_KEY: ${{ secrets.DIGITALOCEAN_SSH_PRIV }}
