@@ -32,6 +32,6 @@ jobs:
                   path: ./
                   remote_path: ${{ secrets.HOST_THEME_DIRECTORY }}
                   remote_host: ${{ secrets.HOST_DOMAIN }}
-                  remote_port: ${{ secretes.HOST_PORT}}
+                  remote_port: ${{ secrets.HOST_PORT}}
                   remote_user: ${{ secrets.HOST_USER }}
                   remote_key: ${{ secrets.DIGITALOCEAN_SSH_PRIV }}
