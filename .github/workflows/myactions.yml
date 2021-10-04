@@ -28,7 +28,7 @@ jobs:
             - name: create ssh file
               run: touch temp_ssh
             - name: add ssh key to temp_ssh
-              run: 'cat "$SSH_KEY" >> temp_ssh'
+              run: 'echo "$SSH_KEY" > temp_ssh'
               shell: bash
               env:
                   SSH_KEY: ${{ secrets.DIGITALOCEAN_SSH_PRIV }}
