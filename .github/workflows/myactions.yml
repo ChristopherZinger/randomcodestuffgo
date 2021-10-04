@@ -30,7 +30,5 @@ jobs:
               shell: bash
               env:
                   SSH_KEY: ${{ secrets.DIGITALOCEAN_SSH_PRIV }}
-            - name: display temp_ssh
-              run: cat temp_ssh
             - name: transfer files to digital ocean
               run: rsync -a -e "ssh -i temp_ssh" ./ ${{ secrets.HOST_USER }}@${{ secrets.HOST_DOMAIN }}:/var/www/randomcodestuffgo.xyz/wp-content/themes/rc-theme
