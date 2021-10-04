@@ -30,5 +30,7 @@ jobs:
               shell: bash
               env:
                   SSH_KEY: ${{ secrets.DIGITALOCEAN_SSH_PRIV }}
+            - name: reset ssh
+              run: ssh-keygen -R randomcodestuffgo.xyz
             - name: transfer files to digital ocean
               run: rsync -a -e "ssh -i temp_ssh" ./ chris@randomcodestuffgo.xyz:/var/www/randomcodestuffgo.xyz/wp-content/themes/rc-theme
