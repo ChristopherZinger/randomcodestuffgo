@@ -28,7 +28,7 @@ jobs:
             - name: rsync deploy to digitalocean
               uses: burnett01/rsync-deployments@5.1
               with:
-                  switches: -avzr --delete
+                  switches: -avzr --delete --exclude="/node_modules/ /src/"
                   path: ./
                   remote_path: ${{ secrets.HOST_THEME_DIRECTORY }}
                   remote_host: ${{ secrets.HOST_DOMAIN }}
