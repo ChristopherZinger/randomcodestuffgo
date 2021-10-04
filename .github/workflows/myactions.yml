@@ -34,7 +34,7 @@ jobs:
             - name: list files
               run: ls -a
             - name: transfer files to digital ocean
-              run: rsync -a -e "ssh -i ./temp_ssh" ./ ${{ HOST_USER }}@${{ HOST_DOMAIN }}:/var/www/randomcodestuffgo.xyz/wp-content/themes/rc-theme
+              run: rsync -a -e "ssh -i ./temp_ssh" ./ ${{ secrets.HOST_USER }}@${{ secrets.HOST_DOMAIN }}:/var/www/randomcodestuffgo.xyz/wp-content/themes/rc-theme
               # uses: easingthemes/ssh-deploy@main
               # env:
               #     SSH_PRIVATE_KEY: ${{ secrets.DIGITALOCEAN_SSH_PRIV }}
