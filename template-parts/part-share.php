@@ -3,7 +3,7 @@
  * @var string $class
  */
 $shares = rcGetShareUrls();
-// $class = $class ?? '';
+$class = $args['class'] ?? '';
 
 $title = __('Share this', 'van-ons');
 
