@@ -27,7 +27,7 @@
 
 	<div>
 		<?php foreach ($categories as $cat) { ?>
-			<div class="selectable-categories__item card" data-title="<?= esc_attr(strtolower($cat->name)) ?>">
+			<div class="selectable-categories__item rc-card" data-title="<?= esc_attr(strtolower($cat->name)) ?>">
 				<a class="" href="<?= get_category_link( $cat ) ?>">
 					<h6 class="selectable-categories__title"><?= esc_html($cat->name) ?></h6>
 					<?php if (!$hideExcerpt) { ?>

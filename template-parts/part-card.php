@@ -5,8 +5,8 @@
 	$linkURL = $args['linkURL'] ?? 'javascript:;';
 ?>
 
-<div class="card" <?= esc_attr($styles); ?>">
-	<h6 class="card__header"><?= esc_html($title); ?></h6>
-	<p class="card__text"><?= esc_html($excerpt); ?></p>
-	<a class="card__link" href="<?= esc_attr($linkURL); ?>"></a>
+<div class="rc-card" <?= esc_attr($styles); ?>">
+	<h6 class="rc-card__header"><?= esc_html($title); ?></h6>
+	<p class="rc-card__text"><?= esc_html($excerpt); ?></p>
+	<a class="rc-card__link" href="<?= esc_attr($linkURL); ?>"></a>
 </div>
