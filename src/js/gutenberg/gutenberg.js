@@ -10,6 +10,7 @@ import SelectableCategories from './blocks/selectable-categories'
 import SpecialList from './blocks/special-list'
 import SpecialListItem from './blocks/special-list/special-list-item'
 import SeriesNavigationButtons from './blocks/series-navigation-buttons'
+import RowOfSeries from './blocks/row-of-series'
 
 const { __ } = wp.i18n
 const { setCategories, getCategories } = wp.blocks
@@ -38,6 +39,7 @@ AccordionHeader()
 AccordionList()
 NextPrevBtn()
 PostCard()
+RowOfSeries()
 SelectableCategories()
 SpecialList()
 SpecialListItem()

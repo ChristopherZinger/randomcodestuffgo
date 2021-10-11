@@ -1,0 +1,33 @@
+/**
+ * row-of-series
+ */
+
+.row-of-series__body {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: $block-gutter;
+}
+
+/**
+ * post-card
+ */
+.row-of-series__body .post-card__tags {
+    display: none;
+}
+
+.row-of-series .post-card {
+    width: 100%;
+
+    @include breakpoint(medium) {
+        width: calc((100% - #{$block-gutter}) / 2);
+    }
+
+    @include breakpoint(large) {
+        width: calc((100% - (3 * #{$block-gutter})) / 4);
+    }
+}
+
+.row-of-series .post-card__header {
+    @include h4;
+    font-weight: 500;
+}

@@ -11,6 +11,7 @@ class Blocks
         self::register('post-card', true);
         self::register('section', true);
         self::register('next-prev-btn', true);
+        self::register('row-of-series', true);
         self::register('series-navigation-buttons', true);
     }
 

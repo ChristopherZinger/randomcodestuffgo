@@ -29,19 +29,29 @@
     }
 }
 
-.home__social-media {
+/** 
+ * Home Section
+ */
+
+.home-section {
+    border-top: 1px solid $font-color;
+}
+
+.home-section__header {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin: 20px 0;
+
+    @include breakpoint(medium) {
+        margin-top: 50px;
+        margin: 50px 0;
+    }
 }
 
-.home__social-media .social-media {
-    position: sticky;
-    top: 50px;
-}
-
-.home__social-media h2 {
-    text-align: right;
-    margin-bottom: $block-gutter-horizontal;
-    padding-bottom: 4px;
-    border-bottom: 1px solid $color-black;
+.home-section__header > * {
+    font-size: 14px;
+    font-weight: 400;
 }

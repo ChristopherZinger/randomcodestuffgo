@@ -15,11 +15,13 @@ Template Name: Home
       ]) 
     ?>
 
-    <?php get_template_part('template-parts/part-tags'); ?>
-    <?php get_template_part('template-parts/part', 'series') ?>
+    <?php the_content(); ?>
+
+    <!-- <?php get_template_part('template-parts/part-tags'); ?> -->
+    <!-- <?php get_template_part('template-parts/part', 'series') ?> -->
     
     <div class="grid-x grid-margin-x latest-posts section">
-      <?php get_template_part('template-parts/part', 'latest-posts'); ?>
+      <!-- <?php get_template_part('template-parts/part', 'latest-posts'); ?> -->
     </div>
   </main>
 <?php get_footer(); ?>
