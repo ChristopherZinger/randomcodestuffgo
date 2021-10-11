@@ -15,7 +15,7 @@
     <a class="h6" href="<?= esc_url( $linkURL ); ?>" target="<?= $openInNewTab ? '_blank' : '' ?>" name="<?= $linkName ?>"><?= esc_html( $linkText ); ?></a>
   </header>
   
-  <div class="row-of-series__body">
+  <div class="home-section__body">
     <?php 
       foreach ($categories as $category) :
         $cat = get_category($category['id']);

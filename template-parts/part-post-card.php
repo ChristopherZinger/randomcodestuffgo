@@ -1,7 +1,7 @@
 <?php
 	$cardpost = $args['cardpost'] ?? [];
 	$title = $args['title'] ?? $cardpost->post_title ?? '';
-	$text = $args['text'] ?? $cardpost->post_excerpt ?? __('This item does not have a description yet.');
+	$text = $args['text'] ?? $cardpost->post_excerpt ?? __('This item does not have a description yet.', 'rc');
   $hideTags = $args['hideTags'] ?? false;
   $url = $args['url'] ?? '';
 ?>
@@ -13,7 +13,7 @@
 
   <?php if (! $hideTags ) : ?>
     <div class="post-card__tags">
-      <?php get_template_part('template-parts/part-inline-tags', null, ['postToFindTagsFor' => $cardpost]); ?>
+      <?php get_template_part('template-parts/part-inline-tags', null, ['postId' => $cardpost->ID]); ?>
     </div>
   <?php endif; ?>
 

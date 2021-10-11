@@ -1,6 +1,6 @@
 <?php
   $tags = $args['tags'] ?? [];
-$post = $args['postId'] ?? false;
+  $post = $args['postId'] ?? false;
 
   if ($post) {
     $tags = get_the_tags($post);

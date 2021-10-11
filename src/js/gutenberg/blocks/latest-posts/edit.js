@@ -3,8 +3,14 @@ import { CategoryPicker } from '../../components/post-picker/categoryPicker'
 const { PanelBody, ToggleControl } = wp.components
 const { __ } = wp.i18n
 const { InspectorControls, RichText, URLInput } = wp.blockEditor
+const { withSelect } = wp.data
 
-export default ({ setAttributes, attributes: { title, link, categories } }) => {
+export default withSelect((select) => {
+    const posts = select('core').getEntityRecords('postType', 'post', {
+        per_page: 6,
+    })
+    return { posts }
+})(({ posts, setAttributes, attributes: { title, link } }) => {
     return (
         <>
             <InspectorControls>
@@ -27,17 +33,10 @@ export default ({ setAttributes, attributes: { title, link, categories } }) => {
                         }
                     />
                 </PanelBody>
-                <PanelBody title={__('Select Categories', 'rc')}>
-                    <CategoryPicker
-                        onSave={(categories) => setAttributes({ categories })}
-                        savedCategories={categories}
-                        max={4}
-                    />
-                </PanelBody>
             </InspectorControls>
 
-            <div class='row-of-series'>
-                <div class='row-of-series__header'>
+            <div className='home-section latest-posts'>
+                <header className='home-section__header latest-posts__header'>
                     <RichText
                         as='h6'
                         label={__('Title', 'rc')}
@@ -52,25 +51,17 @@ export default ({ setAttributes, attributes: { title, link, categories } }) => {
                         onChange={(text) => setAttributes({ link: { ...link, text } })}
                         placeholder={__('Link', 'rc')}
                     />
-                </div>
-
-                <div class='row-of-series__body'>
-                    {categories.map((category) => (
-                        <CategoryCard category={category} />
-                    ))}
+                </header>
+                <div className='home-section__body latest-posts__body'>
+                    {posts &&
+                        posts.map((post) => (
+                            <div className='post-card'>
+                                <header className='post-card__header'>{post.title.raw}</header>
+                                <div className='post-card__excerpt'>{post.excerpt.raw}</div>
+                            </div>
+                        ))}
                 </div>
             </div>
         </>
     )
-}
-
-const CategoryCard = ({ category }) => {
-    return (
-        <div className='post-card'>
-            <h4 className='post-card__header h4'>{category.name}</h4>
-            <div className='post-card__excerpt'>
-                {category.description || __("This category does't have a description yet.")}
-            </div>
-        </div>
-    )
-}
+})

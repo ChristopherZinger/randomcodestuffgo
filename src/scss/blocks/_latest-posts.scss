@@ -1,0 +1,18 @@
+.latest-posts__body .post-card {
+    width: 100%;
+
+    @include breakpoint(medium) {
+        width: calc((100% - (2 * #{$block-gutter})) / 3);
+    }
+
+    @include breakpoint(1400) {
+        width: calc((100% - (5 * #{$block-gutter})) / 6);
+    }
+}
+
+.latest-posts .post-card__header {
+    @include h6;
+    text-transform: capitalize;
+    font-size: rem-calc(24);
+    font-weight: 500;
+}

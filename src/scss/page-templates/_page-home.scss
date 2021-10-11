@@ -37,6 +37,17 @@
     border-top: 1px solid $font-color;
 }
 
+.home-section:not(:last-child):not(:only-child) {
+    margin-bottom: 50px;
+}
+
+.home-section__body {
+    display: flex;
+    column-gap: $block-gutter;
+    row-gap: $block-gutter-horizontal;
+    flex-wrap: wrap;
+}
+
 .home-section__header {
     display: flex;
     justify-content: space-between;
@@ -54,4 +65,8 @@
 .home-section__header > * {
     font-size: 14px;
     font-weight: 400;
+}
+
+.home-section .post-card {
+    margin-bottom: 0;
 }
