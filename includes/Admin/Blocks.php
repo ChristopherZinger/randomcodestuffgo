@@ -6,7 +6,6 @@ class Blocks
 {
     public static function init()
     {
-        self::register('selectable-categories', true);
         self::register('accordion', true);
         self::register('post-card', true);
         self::register('section', true);
