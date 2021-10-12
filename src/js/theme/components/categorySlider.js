@@ -15,8 +15,6 @@ export const categorySlider = () => {
         const navContainer = container.querySelector(selectors.nav)
         const controlsContainer = container.querySelector(selectors.controls)
 
-        console.log(navContainer, slider, controlsContainer)
-
         if (!slider) {
             return
         }
