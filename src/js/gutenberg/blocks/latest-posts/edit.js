@@ -52,12 +52,14 @@ export default withSelect((select) => {
                         placeholder={__('Link', 'rc')}
                     />
                 </header>
-                <div className='home-section__body latest-posts__body'>
+                <div className='grid-x grid-margin-x'>
                     {posts &&
                         posts.map((post) => (
-                            <div className='post-card'>
-                                <header className='post-card__header'>{post.title.raw}</header>
-                                <div className='post-card__excerpt'>{post.excerpt.raw}</div>
+                            <div className='cell large-2'>
+                                <div className='post-card'>
+                                    <header className='post-card__header'>{post.title.raw}</header>
+                                    <div className='post-card__excerpt'>{post.excerpt.raw}</div>
+                                </div>
                             </div>
                         ))}
                 </div>

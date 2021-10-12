@@ -2,10 +2,10 @@ import { tns } from '../../../../node_modules/tiny-slider/src/tiny-slider'
 
 export const categorySlider = () => {
     const selectors = {
-        sliderContainer: '.row-of-series__row',
-        slider: '.row-of-series__slider',
-        nav: '.row-of-series__slider-nav',
-        controls: '.row-of-series__slider-controls',
+        sliderContainer: '.row-of-categories__row',
+        slider: '.row-of-categories__slider',
+        nav: '.row-of-categories__slider-nav',
+        controls: '.row-of-categories__slider-controls',
     }
 
     const sliderContainers = document.querySelectorAll(selectors.sliderContainer)

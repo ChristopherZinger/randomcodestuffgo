@@ -5,8 +5,8 @@ const { __ } = wp.i18n
 const { registerBlockType } = wp.blocks
 
 export default () => {
-    registerBlockType('rc/row-of-series', {
-        title: __('Row of Series', 'rc'),
+    registerBlockType('rc/row-of-categories', {
+        title: __('Rows of Categories', 'rc'),
         description: __('This block is for Home Page', 'rc'),
         icon: {
             foreground: colors.red,

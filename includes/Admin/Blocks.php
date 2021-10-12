@@ -12,7 +12,7 @@ class Blocks
         self::register('section', true);
         self::register('next-prev-btn', true);
         self::register('latest-posts', true);
-        self::register('row-of-series', true);
+        self::register('row-of-categories', true);
         self::register('series-navigation-buttons', true);
     }
 

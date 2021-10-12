@@ -9,13 +9,13 @@
 ?>
 
 
-<div class="row-of-series home-section">
+<div class="row-of-categories home-section">
   <header class="home-section__header">
     <h2 class="h6"><?= esc_html( $title ); ?></h2>
     <a class="h6" href="<?= esc_url( $linkURL ); ?>" target="<?= $openInNewTab ? '_blank' : '' ?>" name="<?= $linkName ?>"><?= esc_html( $linkText ); ?></a>
   </header>
   
-  <div class="row-of-series__body">
+  <div class="row-of-categories__body">
     <?php 
       foreach ($categories as $category) :
         $cat = get_category($category['id']);
@@ -24,9 +24,9 @@
           'numberposts' => 10 
         ]);
     ?>
-      <div class="row-of-series__row grid-x grid-margin-x grid-margin-y">
+      <div class="row-of-categories__row grid-x grid-margin-x grid-margin-y">
         <div class="cell large-3">
-          <h3 class="row-of-series__row-title">
+          <h3 class="row-of-categories__row-title">
             <a href="<?= esc_url( get_category_link($cat) ); ?>" name="<?= esc_attr( $cat->name ); ?>">
               <?= esc_html( $cat->name ); ?>
             </a>
@@ -34,7 +34,7 @@
         </div>
 
         <div class="cell large-9">
-          <div class="row-of-series__slider">
+          <div class="row-of-categories__slider">
             <?php foreach($posts as $p) : ?>
                 <?php
                   get_template_part('template-parts/part', 'post-card', [
@@ -46,15 +46,15 @@
                 ?>
             <?php endforeach; ?>
           </div>
-          <div class="row-of-series__slider-navigation-panel">
+          <div class="row-of-categories__slider-navigation-panel">
             <?php
               get_template_part('template-parts/part', 'tns-nav', [
                 'nrOfPoints' => count($posts),
-                'styles' => 'row-of-series__slider-nav'
+                'styles' => 'row-of-categories__slider-nav'
               ]); 
 
               get_template_part('template-parts/part', 'tns-controls', [
-                'styles' => 'row-of-series__slider-controls show-for-medium' 
+                'styles' => 'row-of-categories__slider-controls show-for-medium' 
               ]);
             ?>
           </div>

@@ -10,7 +10,7 @@ import SelectableCategories from './blocks/selectable-categories'
 import SpecialList from './blocks/special-list'
 import SpecialListItem from './blocks/special-list/special-list-item'
 import SeriesNavigationButtons from './blocks/series-navigation-buttons'
-import RowOfSeries from './blocks/row-of-series'
+import RowOfCategories from './blocks/row-of-categories'
 import LatestPosts from './blocks/latest-posts'
 
 const { __ } = wp.i18n
@@ -41,7 +41,7 @@ AccordionList()
 LatestPosts()
 NextPrevBtn()
 PostCard()
-RowOfSeries()
+RowOfCategories()
 SelectableCategories()
 SpecialList()
 SpecialListItem()

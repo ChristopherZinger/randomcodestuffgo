@@ -37,8 +37,8 @@ export default ({ setAttributes, attributes: { title, link, categories } }) => {
                 </PanelBody>
             </InspectorControls>
 
-            <div className='row-of-series home-section'>
-                <div className='row-of-series__header home-section__header'>
+            <div className='row-of-categories home-section'>
+                <div className='row-of-categories__header home-section__header'>
                     <RichText
                         as='h6'
                         label={__('Title', 'rc')}
@@ -55,7 +55,7 @@ export default ({ setAttributes, attributes: { title, link, categories } }) => {
                     />
                 </div>
 
-                <div class='row-of-series__body'>
+                <div class='row-of-categories__body'>
                     {categories.map((category) => (
                         <CategoryRow category={category} />
                     ))}
@@ -73,7 +73,7 @@ const CategoryRow = withSelect((select, { category }) => {
     return { posts }
 })(({ category, posts }) => {
     return (
-        <div className='row-of-series__row grid-x grid-margin-x'>
+        <div className='row-of-categories__row grid-x grid-margin-x'>
             <div className='cell large-3'>
                 <h3 className='post-card__header'>{category.name}</h3>
             </div>
