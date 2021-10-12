@@ -6,7 +6,8 @@ const { registerBlockType } = wp.blocks
 
 export default () => {
     registerBlockType('rc/latest-posts', {
-        title: __('latest-posts', 'rc'),
+        title: __('Row of latest posts', 'rc'),
+        description: __('This block is for home page', 'rc'),
         icon: {
             foreground: colors.red,
             src: 'screenoptions',

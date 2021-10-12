@@ -3,6 +3,7 @@ import { CategoryPicker } from '../../components/post-picker/categoryPicker'
 const { PanelBody, ToggleControl } = wp.components
 const { __ } = wp.i18n
 const { InspectorControls, RichText, URLInput } = wp.blockEditor
+const { withSelect } = wp.data
 
 export default ({ setAttributes, attributes: { title, link, categories } }) => {
     return (
@@ -36,8 +37,8 @@ export default ({ setAttributes, attributes: { title, link, categories } }) => {
                 </PanelBody>
             </InspectorControls>
 
-            <div class='row-of-series'>
-                <div class='row-of-series__header'>
+            <div className='row-of-series home-section'>
+                <div className='row-of-series__header home-section__header'>
                     <RichText
                         as='h6'
                         label={__('Title', 'rc')}
@@ -56,7 +57,7 @@ export default ({ setAttributes, attributes: { title, link, categories } }) => {
 
                 <div class='row-of-series__body'>
                     {categories.map((category) => (
-                        <CategoryCard category={category} />
+                        <CategoryRow category={category} />
                     ))}
                 </div>
             </div>
@@ -64,13 +65,32 @@ export default ({ setAttributes, attributes: { title, link, categories } }) => {
     )
 }
 
-const CategoryCard = ({ category }) => {
+const CategoryRow = withSelect((select, { category }) => {
+    const posts = select('core').getEntityRecords('postType', 'post', {
+        categories: category.id,
+        per_page: 3,
+    })
+    return { posts }
+})(({ category, posts }) => {
+    console.log('POSTS: ', posts)
     return (
-        <div className='post-card'>
-            <h4 className='post-card__header h4'>{category.name}</h4>
-            <div className='post-card__excerpt'>
-                {category.description || __("This category does't have a description yet.")}
+        <div className='row-of-series__row grid-x grid-margin-x'>
+            <div className='cell large-3'>
+                <h3 className='post-card__header'>{category.name}</h3>
+            </div>
+            <div className='cell large-9'>
+                <div className='grid-x grid-margin-x'>
+                    {posts &&
+                        posts.map((post) => (
+                            <div className='cell medium-6 large-4'>
+                                <div className='post-card'>
+                                    <header className='post-card__header'>{post.title.raw}</header>
+                                    <div className='post-card__body'>{post.excerpt.raw}</div>
+                                </div>
+                            </div>
+                        ))}
+                </div>
             </div>
         </div>
     )
-}
+})

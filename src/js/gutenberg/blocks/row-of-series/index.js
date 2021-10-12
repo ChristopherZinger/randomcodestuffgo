@@ -7,6 +7,7 @@ const { registerBlockType } = wp.blocks
 export default () => {
     registerBlockType('rc/row-of-series', {
         title: __('Row of Series', 'rc'),
+        description: __('This block is for Home Page', 'rc'),
         icon: {
             foreground: colors.red,
             src: 'screenoptions',

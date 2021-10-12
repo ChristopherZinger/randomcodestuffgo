@@ -6,18 +6,19 @@ import LocationNavigation from './components/locationNavigation'
 import Gist from './components/gist'
 import SelectableCategories from './components/selectableCategories'
 import PageSeries from './components/pageSeries'
-import { seriesSlider } from './components/seriesSlider'
+import { categorySlider } from './components/categorySlider'
+import { init } from './utils'
 
 // todo : document on load
+init(() => {
+    categorySlider()
 
-seriesSlider()
-
-new Accordion()
-new Header()
-new HeaderSubmenu()
-new HeaderDarkMode()
-new LocationNavigation()
-new PageSeries()
-new SelectableCategories()
-new Gist()
-
+    new Accordion()
+    new Header()
+    new HeaderSubmenu()
+    new HeaderDarkMode()
+    new LocationNavigation()
+    new PageSeries()
+    new SelectableCategories()
+    new Gist()
+})

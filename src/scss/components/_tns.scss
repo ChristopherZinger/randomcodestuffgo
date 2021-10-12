@@ -1,0 +1,22 @@
+.slider-marble {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: $color-light-grey;
+    cursor: pointer;
+}
+
+.slider-marble:not(:last-child):not(:only-child) {
+    margin-right: 5px;
+}
+
+.tns-nav-active {
+    background-color: $font-color;
+}
+
+.tns__control {
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+}
