@@ -12,6 +12,7 @@
 
 .post-card__header {
     margin: 0;
+    @include h6;
     text-transform: capitalize;
 }
 

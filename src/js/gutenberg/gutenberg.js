@@ -11,7 +11,7 @@ import SpecialListItem from './blocks/special-list/special-list-item'
 import SeriesNavigationButtons from './blocks/series-navigation-buttons'
 import RowOfCategories from './blocks/row-of-categories'
 import LatestPosts from './blocks/latest-posts'
-
+import SelectedPosts from './blocks/selected-posts'
 const { __ } = wp.i18n
 const { setCategories, getCategories } = wp.blocks
 
@@ -41,6 +41,7 @@ LatestPosts()
 NextPrevBtn()
 PostCard()
 RowOfCategories()
+SelectedPosts()
 SpecialList()
 SpecialListItem()
 Section()

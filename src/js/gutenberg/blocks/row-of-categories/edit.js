@@ -55,7 +55,7 @@ export default ({ setAttributes, attributes: { title, link, categories } }) => {
                     />
                 </div>
 
-                <div class='row-of-categories__body'>
+                <div className='row-of-categories__body'>
                     {categories.map((category) => (
                         <CategoryRow category={category} />
                     ))}

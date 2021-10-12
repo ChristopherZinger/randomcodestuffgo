@@ -4,7 +4,7 @@ const { __ } = wp.i18n
 const { Modal, TextControl } = wp.components
 const { Fragment, useState } = wp.element
 
-export const PostPicker = ({ onSelect, isOpen, close }) => {
+export const PostPicker = ({ onSelect, isOpen, close, postType = 'post' }) => {
     const [searchQuery, setSearchQuery] = useState('')
 
     const handleSelectPost = (post) => {
@@ -23,7 +23,11 @@ export const PostPicker = ({ onSelect, isOpen, close }) => {
                             value={searchQuery}
                             onChange={(v) => setSearchQuery(v)}
                         />
-                        <ResultList searchQuery={searchQuery} onSelect={handleSelectPost} />
+                        <ResultList
+                            searchQuery={searchQuery}
+                            onSelect={handleSelectPost}
+                            postType={postType}
+                        />
                     </div>
                 </Modal>
             )}

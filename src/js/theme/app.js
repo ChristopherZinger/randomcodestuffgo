@@ -8,11 +8,13 @@ import PageSeries from './components/pageSeries'
 import { categorySlider } from './components/categorySlider'
 import { latestPostsSlider } from './components/latestPostsSlider'
 import { init } from './utils'
+import { selectedPostsSlider } from './components/selectedPostsSlider'
 
 // todo : document on load
 init(() => {
     categorySlider()
     latestPostsSlider()
+    selectedPostsSlider()
 
     new Accordion()
     new Header()

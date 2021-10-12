@@ -1,0 +1,15 @@
+.selected-posts__slider-navigation-panel {
+    display: flex;
+
+    @include breakpoint(small only) {
+        justify-content: center;
+    }
+}
+
+.selected-posts__slider-navigation-panel .tns__control.previous {
+    display: none;
+}
+
+.selected-posts__slider-navigation-panel .tns__control.next {
+    margin-left: $block-gutter;
+}
