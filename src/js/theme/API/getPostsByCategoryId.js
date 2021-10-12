@@ -11,7 +11,6 @@ export const getPostsByCategoryId = async (keyword, categories, per_page = 10, p
 
     try {
         const result = await fetch(url, { method: 'GET' })
-        console.log('fetch: ', result)
         return result
     } catch (err) {
         console.warn(err)

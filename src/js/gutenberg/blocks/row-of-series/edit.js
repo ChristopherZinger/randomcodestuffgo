@@ -72,7 +72,6 @@ const CategoryRow = withSelect((select, { category }) => {
     })
     return { posts }
 })(({ category, posts }) => {
-    console.log('POSTS: ', posts)
     return (
         <div className='row-of-series__row grid-x grid-margin-x'>
             <div className='cell large-3'>
