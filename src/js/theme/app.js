@@ -7,11 +7,13 @@ import Gist from './components/gist'
 import SelectableCategories from './components/selectableCategories'
 import PageSeries from './components/pageSeries'
 import { categorySlider } from './components/categorySlider'
+import { latestPostsSlider } from './components/latestPostsSlider'
 import { init } from './utils'
 
 // todo : document on load
 init(() => {
     categorySlider()
+    latestPostsSlider()
 
     new Accordion()
     new Header()

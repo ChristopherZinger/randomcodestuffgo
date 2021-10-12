@@ -1,12 +1,20 @@
-.latest-posts__body .post-card {
-    width: 100%;
+.latest-posts__slider-navigation-panel {
+    display: flex;
 
-    @include breakpoint(medium) {
-        width: calc((100% - (2 * #{$block-gutter})) / 3);
+    @include breakpoint(small only) {
+        justify-content: center;
     }
+}
 
-    @include breakpoint(1400) {
-        width: calc((100% - (5 * #{$block-gutter})) / 6);
+.latest-posts__slider-controls .tns__control.previous {
+    display: none;
+}
+
+.latest-posts__slider-controls .tns__control.next {
+    margin-left: $block-gutter;
+
+    @include breakpoint(small only) {
+        display: none;
     }
 }
 

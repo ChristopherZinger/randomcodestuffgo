@@ -17,6 +17,10 @@
     display: flex;
     align-items: center;
     margin-top: 10px;
+
+    @include breakpoint(small only) {
+        justify-content: center;
+    }
 }
 
 .row-of-series__slider-controls {
