@@ -6,23 +6,18 @@ const { registerBlockType } = wp.blocks
 const { InnerBlocks } = wp.blockEditor
 
 export default () => {
-    registerBlockType('rc/section', {
-        title: __('Section', 'rc'),
-        description: __(
-            'Section for About page. Each section will be displayed in side menu.',
-            'rc'
-        ),
+    registerBlockType('rc/post-list-with-search', {
+        title: __('Post List With Search Bar', 'rc'),
+        description: __('Vertical list of posts with search bar on top.', 'rc'),
         icon: {
             foreground: colors.red,
-            src: 'editor-justify',
+            src: 'list-view',
         },
         category: 'rc',
         attributes: {
-            sectionName: {
-                type: 'string',
-            },
-            sectionSlug: {
-                type: 'string',
+            ids: {
+                type: 'array',
+                default: [],
             },
         },
         edit,

@@ -1,12 +1,10 @@
 <?php get_header(); ?>
 
-<main class="content post-page">
+<main class="content content--single">
     <?= get_template_part( 'template-parts/part', 'post-hero', [
         'title' => get_the_title(),
         'excerpt' => get_the_excerpt()
     ] ) ?>
-
-
 
     <div class="grid-x grid-margin-x section">
         <div class="cell medium-1 large-2 show-for-medium"></div>

@@ -12,6 +12,8 @@ import SeriesNavigationButtons from './blocks/series-navigation-buttons'
 import RowOfCategories from './blocks/row-of-categories'
 import LatestPosts from './blocks/latest-posts'
 import SelectedPosts from './blocks/selected-posts'
+import PostListWithSearch from './blocks/post-list-with-search'
+
 const { __ } = wp.i18n
 const { setCategories, getCategories } = wp.blocks
 
@@ -40,6 +42,7 @@ AccordionList()
 LatestPosts()
 NextPrevBtn()
 PostCard()
+PostListWithSearch()
 RowOfCategories()
 SelectedPosts()
 SpecialList()

@@ -9,6 +9,7 @@ import { categorySlider } from './components/categorySlider'
 import { latestPostsSlider } from './components/latestPostsSlider'
 import { init } from './utils'
 import { selectedPostsSlider } from './components/selectedPostsSlider'
+import PostListWithSearch from './components/post-list-with-search'
 
 // todo : document on load
 init(() => {
@@ -17,10 +18,11 @@ init(() => {
     selectedPostsSlider()
 
     new Accordion()
+    new Gist()
     new Header()
     new HeaderSubmenu()
     new HeaderDarkMode()
     new LocationNavigation()
     new PageSeries()
-    new Gist()
+    new PostListWithSearch()
 })

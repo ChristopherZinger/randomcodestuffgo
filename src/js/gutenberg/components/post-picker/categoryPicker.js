@@ -39,7 +39,12 @@ export const CategoryPicker = withSelect((select) => {
 
     return (
         <div className=''>
-            <Button onClick={() => setIsOpen(true)}>Select Categories</Button>
+            <Button
+                className='rc-components-button rc-components-button--warn'
+                onClick={() => setIsOpen(true)}
+            >
+                Select Categories
+            </Button>
             {isOpen && (
                 <Modal title='Select Category' onRequestClose={() => setIsOpen(false)}>
                     <section>
@@ -78,7 +83,11 @@ export const CategoryPicker = withSelect((select) => {
                                     })}
                         </div>
                         <footer>
-                            <Button onClick={save} className='category-picker__button'>
+                            <Button
+                                className='rc-components-button'
+                                onClick={save}
+                                className='category-picker__button'
+                            >
                                 {__('Add', 'rc')}
                             </Button>
                         </footer>

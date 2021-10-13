@@ -66,7 +66,9 @@ export default ({ setAttributes, attributes: { title, link, isTypePost, ids = []
                 </PanelBody>
 
                 <PanelBody title={__('Select Categories', 'rc')}>
-                    <Button onClick={() => openModal()}>{__('Add a Post or Page', 'rc')}</Button>
+                    <Button className='rc-components-button' onClick={() => openModal()}>
+                        {__('Add a Post or Page', 'rc')}
+                    </Button>
                     <PostPicker
                         onSelect={({ id }) => handleAddPost(id)}
                         isOpen={isModalOpen}
@@ -135,7 +137,12 @@ const Card = withSelect((select, { id, postType }) => {
             ) : (
                 'Incorrect id'
             )}
-            <button onClick={() => remove(post.id)}>remove</button>
+            <button
+                className='rc-components-button rc-components-button--warn'
+                onClick={() => remove(post.id)}
+            >
+                remove
+            </button>
         </div>
     )
 })

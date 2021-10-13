@@ -5,7 +5,7 @@ Template Name: About
 ?>
 
 <?php get_header(); ?>
-  <main class="content">
+  <main class="content content--about">
     <?= get_template_part(
       'template-parts/part', 
       'homepage-hero', 

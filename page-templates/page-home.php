@@ -5,7 +5,7 @@ Template Name: Home
 ?>
 
 <?php get_header(); ?>
-  <main class="content">
+  <main class="content content--home">
     <?= get_template_part(
       'template-parts/part', 
       'homepage-hero', 
