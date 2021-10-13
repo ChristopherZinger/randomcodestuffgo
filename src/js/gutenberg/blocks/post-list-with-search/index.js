@@ -19,6 +19,14 @@ export default () => {
                 type: 'array',
                 default: [],
             },
+            isTypePost: {
+                type: 'boolean',
+                default: true,
+            },
+            hideSearchBar: {
+                type: 'boolean',
+                default: false,
+            },
         },
         edit,
         save: (props) => <InnerBlocks.Content />,

@@ -2,19 +2,19 @@ import { PostPicker } from '../../components/post-picker/postPicker'
 
 const { __ } = wp.i18n
 const { withSelect } = wp.data
-const { PanelBody, Button } = wp.components
+const { PanelBody, Button, ToggleControl } = wp.components
 const { useState } = wp.element
 const { InspectorControls } = wp.blockEditor
 
-export default withSelect((select, { attributes: { ids } }) => {
-    const posts = select('core').getEntityRecords('postType', 'post', {
+export default withSelect((select, { attributes: { ids, isTypePost } }) => {
+    const posts = select('core').getEntityRecords('postType', isTypePost ? 'post' : 'page', {
         include: ids,
     })
 
     return {
         posts,
     }
-})(({ attributes: { ids }, setAttributes, posts }) => {
+})(({ attributes: { ids, isTypePost, hideSearchBar }, setAttributes, posts }) => {
     const [isModalOpen, setIsModalOpen] = useState(false)
 
     const handleAddPost = (post) => {
@@ -30,15 +30,37 @@ export default withSelect((select, { attributes: { ids } }) => {
     return (
         <>
             <InspectorControls>
-                <PanelBody title={__('Select Categories', 'rc')}>
+                <PanelBody title={__('Posts or Pages')}>
+                    <p>*** Changing from post to pages or around will clear the list of posts.</p>
+                    <ToggleControl
+                        label={__('Switch between pages and posts', 'rc')}
+                        help={isTypePost ? __('Select: Post', 'rc') : __('Select: Page', 'rc')}
+                        checked={isTypePost}
+                        onChange={() => setAttributes({ isTypePost: !isTypePost, ids: [] })}
+                    />
+                </PanelBody>
+
+                <PanelBody title={__('Hide the search bar', 'rc')}>
+                    <ToggleControl
+                        label={__('Hide the search bar', 'rc')}
+                        help={
+                            hideSearchBar ? __('Status: Hidden', 'rc') : __('Status: Visible', 'rc')
+                        }
+                        checked={hideSearchBar}
+                        onChange={() => setAttributes({ hideSearchBar: !hideSearchBar })}
+                    />
+                </PanelBody>
+
+                <PanelBody title={__('Pick Posts', 'rc')}>
                     <Button className='rc-components-button' onClick={() => setIsModalOpen(true)}>
-                        {__('Add Post', 'rc')}
+                        {isTypePost ? __('Add Post', 'rc') : __('Add Page', 'rc')}
                     </Button>
                     <PostPicker
                         onSelect={handleAddPost}
                         close={() => setIsModalOpen(false)}
                         isOpen={isModalOpen}
                         idsToExclude={ids}
+                        postType={isTypePost ? 'post' : 'page'}
                     />
                 </PanelBody>
             </InspectorControls>
@@ -62,7 +84,7 @@ export default withSelect((select, { attributes: { ids } }) => {
                             className='rc-components-button'
                             onClick={() => setIsModalOpen(true)}
                         >
-                            {__('Add Post', 'rc')}
+                            {isTypePost ? __('Add Post', 'rc') : __('Add Page', 'rc')}
                         </Button>
                     </>
                 )}

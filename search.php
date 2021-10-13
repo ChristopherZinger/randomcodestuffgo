@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-  <div class="content">
+  <main class="content">
     <?= get_template_part(
       'template-parts/part', 
       'homepage-hero', 

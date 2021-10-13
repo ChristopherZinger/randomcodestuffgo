@@ -8,6 +8,20 @@
     width: 100%;
     margin-bottom: calc(#{$block-gutter} / 3 * 2);
     position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: $font-color;
+        margin-bottom: 25px;
+        transition: all $transition;
+    }
+
+    &:hover::before {
+        width: 50px;
+    }
 }
 
 .post-card__header {

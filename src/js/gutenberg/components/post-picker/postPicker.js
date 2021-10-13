@@ -12,13 +12,18 @@ export const PostPicker = ({ onSelect, isOpen, close, postType = 'post', idsToEx
         close()
     }
 
+    const isTypePost = postType === 'post'
+
     return (
         <>
             {isOpen && (
-                <Modal title={__('Post Picker', 'rc')} onRequestClose={close}>
+                <Modal
+                    title={isTypePost ? __('Post Picker', 'rc') : __('Page Picker', 'rc')}
+                    onRequestClose={close}
+                >
                     <div>
                         <TextControl
-                            label={__('Find posts', 'rc')}
+                            label={isTypePost ? __('Find Posts', 'rc') : __('Find Pages', 'rc')}
                             value={searchQuery}
                             onChange={(v) => setSearchQuery(v)}
                         />

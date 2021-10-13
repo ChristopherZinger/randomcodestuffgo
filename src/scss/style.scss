@@ -21,14 +21,14 @@ $editor: false;
 @include foundation-flex-classes;
 @include foundation-visibility-classes;
 
-/*
-* Modules 
-*/
+/**
+ * Modules 
+ */
 @import './modules/gist';
 
-/*
-* Components 
-*/
+/**
+ * Components 
+ */
 @import './components/components';
 
 /**
@@ -36,9 +36,9 @@ $editor: false;
  */
 @import './rc-styles/rc-styles';
 
-/*
-* Templates 
-*/
+/**
+ * Templates 
+ */
 @import './page-templates/page-contact';
 @import './page-templates/page-home';
 @import './page-templates/page-about';
@@ -58,11 +58,11 @@ $editor: false;
 @import './template-parts/footer';
 @import './parts/parts';
 
-/*
-* Pages
-*/
+/**
+ * Blocks 
+ */
 @import './blocks/blocks';
 
-/*
-* Menus
-*/
+/**
+ * Menus
+ */

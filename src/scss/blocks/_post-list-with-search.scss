@@ -1,3 +1,29 @@
 .post-list-with-search__form {
     margin-bottom: $spacing-xxl;
 }
+
+.post-list-with-search__item {
+    position: relative;
+    padding-bottom: 40px;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: black;
+        transition: all $transition;
+    }
+}
+
+.post-list-with-search__item:hover {
+    &::after {
+        width: 70px;
+    }
+}
+
+.post-list-with-search__item .post-card {
+    &::before {
+        display: none;
+    }
+}
