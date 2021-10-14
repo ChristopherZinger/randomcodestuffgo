@@ -36,7 +36,5 @@ export default class PostListWithSearch {
 
     handleFormSubmit(e) {
         e.preventDefault()
-
-        console.log(this.input)
     }
 }

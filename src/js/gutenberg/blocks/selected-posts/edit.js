@@ -23,9 +23,6 @@ export default ({ setAttributes, attributes: { title, link, isTypePost, ids = []
             return
         }
         setAttributes({ ids: [...ids, id] })
-        setTimeout(() => {
-            console.log(ids)
-        }, 500)
     }
 
     return (
@@ -38,9 +35,6 @@ export default ({ setAttributes, attributes: { title, link, isTypePost, ids = []
                         help={isTypePost ? __('Display POSTS.', 'rc') : __('Display PAGES.', 'rc')}
                         onChange={() => {
                             setAttributes({ isTypePost: !isTypePost, ids: [] })
-                            setTimeout(() => {
-                                console.log(isTypePost)
-                            }, 500)
                         }}
                     />
                 </PanelBody>

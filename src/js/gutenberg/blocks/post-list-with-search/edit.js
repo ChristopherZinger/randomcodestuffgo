@@ -11,8 +11,6 @@ export default withSelect((select, { attributes: { ids, isTypePost } }) => {
         include: ids,
     })
 
-    console.log(ids)
-
     return {
         posts,
     }
@@ -52,8 +50,6 @@ export default withSelect((select, { attributes: { ids, isTypePost } }) => {
     const remove = (id) => {
         setAttributes({ ids: ids.filter((_id) => _id !== id) })
     }
-
-    console.log(ids)
 
     return (
         <>
