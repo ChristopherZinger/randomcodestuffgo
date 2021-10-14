@@ -1,8 +1,4 @@
-name: randomcodestuffgo - live
-# on:
-#     push:
-#         branches:
-#             - masteron: [push]
+name: randomcodestuffgo - develop
 on:
     push:
         branches:
@@ -10,7 +6,7 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
-        name: Node 14 sample
+        name: Build and Deploy to Develop
         steps:
             - uses: actions/checkout@v2
             - name: Setup node

@@ -1,0 +1,34 @@
+name: randomcodestuffgo - live
+on:
+    push:
+        branches:
+            - develop
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        name: Build and Deploy to live
+        steps:
+            - run: echo 'test'
+            # - uses: actions/checkout@v2
+            # - name: Setup node
+            #   uses: actions/setup-node@v2
+            #   with:
+            #       node-version: 14
+            # - name: apt update
+            #   run: sudo apt-get update
+            # - name: install libnotify
+            #   run: sudo apt-get install libnotify-bin
+            # - name: NPM - install packages
+            #   run: npm install
+            # - name: NPM - run build
+            #   run: npm run build
+            # - name: rsync deploy to digitalocean
+            #   uses: burnett01/rsync-deployments@5.1
+            #   with:
+            #       switches: -avzr --delete --exclude="node_modules" --exclude="src" --exclude=".git"
+            #       path: ./
+            #       remote_path: ${{ secrets.HOST_THEME_DIRECTORY }}
+            #       remote_host: ${{ secrets.HOST_DOMAIN }}
+            #       remote_port: ${{ secrets.HOST_PORT}}
+            #       remote_user: ${{ secrets.HOST_USER }}
+            #       remote_key: ${{ secrets.DIGITALOCEAN_SSH_PRIV }}
