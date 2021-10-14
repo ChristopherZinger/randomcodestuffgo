@@ -1,13 +1,8 @@
 const { InnerBlocks } = wp.blockEditor
 
-const TEMPLATE = [
-	['rc/special-list']
-]
+const TEMPLATE = [['core/columns']]
+const ALLOWED_BLOCKS = ['core/columns']
 
 export default () => {
-    return (
-		<div className="accordion__content">
-			<InnerBlocks template={TEMPLATE} templateLock={false} />
-		</div>
-    )
+    return <InnerBlocks template={TEMPLATE} allowedBlocks={ALLOWED_BLOCKS} templateLock={false} />
 }
