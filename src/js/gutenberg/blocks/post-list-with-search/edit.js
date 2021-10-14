@@ -11,6 +11,8 @@ export default withSelect((select, { attributes: { ids, isTypePost } }) => {
         include: ids,
     })
 
+    console.log(ids)
+
     return {
         posts,
     }
@@ -26,6 +28,32 @@ export default withSelect((select, { attributes: { ids, isTypePost } }) => {
     }
 
     const postsIsNotEmptyArray = Array.isArray(posts) && posts.length > 0
+    const move = (postID, moveIndex) => {
+        const arr = [...ids]
+        const index = arr.indexOf(postID)
+        if (index === -1) {
+            return // item not on the list
+        }
+        arr.splice(index, 1)
+        arr.splice(index + moveIndex, 0, postID)
+        return arr
+    }
+
+    const moveup = (id) => {
+        const ids = move(id, -1)
+        setAttributes({ ids })
+    }
+
+    const movedown = (id) => {
+        const ids = move(id, 1)
+        setAttributes({ ids })
+    }
+
+    const remove = (id) => {
+        setAttributes({ ids: ids.filter((_id) => _id !== id) })
+    }
+
+    console.log(ids)
 
     return (
         <>
@@ -67,15 +95,19 @@ export default withSelect((select, { attributes: { ids, isTypePost } }) => {
             <div>
                 {postsIsNotEmptyArray ? (
                     <>
-                        {posts.map((post) => (
-                            <Card
-                                key={post.id}
-                                post={post}
-                                remove={(id) =>
-                                    setAttributes({ ids: ids.filter((_id) => _id !== id) })
-                                }
-                            />
-                        ))}
+                        {posts.map((post, i) => {
+                            const isFirst = i === 0
+                            const isLast = i === posts.length - 1
+                            return (
+                                <Card
+                                    key={post.id}
+                                    post={post}
+                                    remove={(id) => remove(id)}
+                                    moveup={!isFirst && (() => moveup(post.id))}
+                                    movedown={!isLast && (() => movedown(post.id))}
+                                />
+                            )
+                        })}
                     </>
                 ) : (
                     <>
@@ -93,7 +125,7 @@ export default withSelect((select, { attributes: { ids, isTypePost } }) => {
     )
 })
 
-const Card = ({ post, remove }) => (
+const Card = ({ post, remove, moveup, movedown }) => (
     <div className='post-card'>
         <header className='post-card__header'>{post.title.raw}</header>
         <div className='post-card__body'>{post.excerpt.raw}</div>
@@ -103,5 +135,17 @@ const Card = ({ post, remove }) => (
         >
             {__('Remove', 'rc')}
         </Button>
+
+        {moveup && (
+            <Button className={'rc-components-button'} onClick={moveup}>
+                {__('Up', 'rc')}
+            </Button>
+        )}
+
+        {movedown && (
+            <Button className={'rc-components-button'} onClick={movedown}>
+                {__('Down', 'rc')}
+            </Button>
+        )}
     </div>
 )

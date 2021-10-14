@@ -71,3 +71,13 @@ a.cover-link {
     top: 0;
     left: 0;
 }
+
+a,
+a:active,
+a:focus,
+input[type]:focus,
+input[type]:active {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+}

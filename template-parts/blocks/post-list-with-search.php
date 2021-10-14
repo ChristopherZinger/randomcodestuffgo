@@ -3,25 +3,15 @@
   $isTypePost = $attributes['isTypePost'] ?? true;
   $hideSearchBar = $attributes['hideSearchBar'] ?? false;
 
-  $posts = [];
-
-  if (count($ids) > 0 ) {
-    if ($isTypePost) {
-      $posts = get_posts([
-        'numberposts' => -1,
-        'include' => $ids
-      ]);
-    } else {
-      $posts = get_pages([
-        'numberposts' => -1,
-        'include' => $ids
-      ]);
-    }
-  }
+  $myquery = new WP_Query([
+    'post_type' => $isTypePost ? 'post' : 'page', 
+    'post__in' => $ids,
+    'orderby' => 'post__in'
+  ]);
 ?>
 
 <div class='post-list-with-search'>
-  <?php if ( count($posts) > 0 ) : ?>
+  <?php if ( count($ids) > 0 ) : ?>
     <?php
       if ( ! $hideSearchBar ) {
         get_template_part('template-parts/part', 'searchform',[
@@ -29,17 +19,19 @@
         ]);
       }
     ?>
-    <div class='post-list-with-search__list'>
-      <?php foreach ( $posts as $mypost ) : ?>
-          <div id="<?= esc_attr( $mypost->post_name ); ?>" data-title="<?= esc_attr( strtolower($mypost->post_title) ); ?>" class="post-list-with-search__item">
-            <?php get_template_part('template-parts/part', 'post-card', [
-              'title' => $mypost->post_title,
-              'text' => $mypost->post_excerpt,
-              'url' => get_permalink($mypost->ID),
-              'hideTags' => true,
-            ]) ?>
-          </div>
-      <?php endforeach; ?>
+    <div class="post-list-with-search__list">
+      <?php if ($myquery->have_posts()): ?>
+        <?php while( $myquery->have_posts() ) : $myquery->the_post(); ?>
+            <div id="<?= esc_attr( 'slug????' ); ?>" data-title="<?= esc_attr( strtolower( get_the_title() ) ); ?>" class="post-list-with-search__item">
+              <?php get_template_part('template-parts/part', 'post-card', [
+                'title' => get_the_title(),
+                'text' => get_the_excerpt(),
+                'url' => $isTypePost ? get_permalink( get_the_ID() ) : get_page_link( get_the_id() ),
+                'hideTags' => true,
+              ]) ?>
+            </div>
+        <?php endwhile; ?>
+      <?php endif; ?>
     </div>
   <?php else : ?>
     <?= esc_html(__('Sorry, no posts found.', 'rc')); ?>
