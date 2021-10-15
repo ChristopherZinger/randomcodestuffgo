@@ -81,3 +81,16 @@ input[type]:active {
     outline: 0;
     box-shadow: none;
 }
+
+kbd,
+code {
+    border: 1px solid $color-grey;
+    border-radius: 6px;
+    padding: 2px 5px 3px 5px;
+    background-color: $color-bg;
+    color: $color-grey;
+}
+
+kbd {
+    white-space: nowrap;
+}
