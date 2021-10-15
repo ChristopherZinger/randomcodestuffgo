@@ -146,3 +146,26 @@
 @mixin tag {
     @include text-s;
 }
+
+/**
+ * Lists
+ */
+@mixin li {
+    @include text-m;
+    position: relative;
+    margin-bottom: 10px;
+    line-height: 1.7;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 14px;
+        transform: translateY(-55%);
+        left: -20px;
+        height: 2px;
+        width: 12px;
+        background-color: $font-color;
+        border-radius: 2px;
+    }
+}
