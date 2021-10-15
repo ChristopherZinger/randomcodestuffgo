@@ -4,20 +4,25 @@ import HeaderDarkMode from './components/headerDarkMode'
 import Accordion from './components/accordion'
 import LocationNavigation from './components/locationNavigation'
 import Gist from './components/gist'
-import SelectableCategories from './components/selectableCategories'
 import PageSeries from './components/pageSeries'
-import { seriesSlider } from './components/seriesSlider'
+import { categorySlider } from './components/categorySlider'
+import { latestPostsSlider } from './components/latestPostsSlider'
+import { init } from './utils'
+import { selectedPostsSlider } from './components/selectedPostsSlider'
+import PostListWithSearch from './components/post-list-with-search'
 
 // todo : document on load
+init(() => {
+    categorySlider()
+    latestPostsSlider()
+    selectedPostsSlider()
 
-seriesSlider()
-
-new Accordion()
-new Header()
-new HeaderSubmenu()
-new HeaderDarkMode()
-new LocationNavigation()
-new PageSeries()
-new SelectableCategories()
-new Gist()
-
+    new Accordion()
+    new Gist()
+    new Header()
+    new HeaderSubmenu()
+    new HeaderDarkMode()
+    new LocationNavigation()
+    new PageSeries()
+    new PostListWithSearch()
+})

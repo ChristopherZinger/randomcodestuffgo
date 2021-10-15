@@ -1,22 +1,23 @@
-#searchform  {
-	display: flex;
-	border-bottom: 1px solid $font-color;
+#searchform {
+    display: flex;
+    border-bottom: 3px solid $font-color;
 }
 
 #s {
-	flex-grow: 1;
-	background-color: transparent;
-	padding: 10px 5px;
-	@include text-m;
+    flex-grow: 1;
+    background-color: transparent;
+    padding: 10px 5px;
+    @include text-m;
 }
 
 #searchsubmit {
-	background-color: transparent;
-	@include text-m;
-	cursor: pointer;
+    background-color: transparent;
+    @include text-m;
+    cursor: pointer;
 }
 
-#s, #searchsubmit {
-	border: none;
-	outline: none;
+#s,
+#searchsubmit {
+    border: none;
+    outline: none;
 }

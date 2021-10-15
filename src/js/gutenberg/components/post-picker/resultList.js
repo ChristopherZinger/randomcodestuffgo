@@ -1,19 +1,21 @@
 const { withSelect } = wp.data
 
-const applyWithSelect = withSelect((select, { postType, searchQuery, args }) => ({
+const applyWithSelect = withSelect((select, { postType, searchQuery, exclude }) => ({
     searchResult: select('core').getEntityRecords('postType', postType || 'post', {
         _embed: 1,
-        search: searchQuery || '',
-        ...args,
+        search: searchQuery,
+        exclude,
     }),
 }))
 
 const ResultList = ({ searchResult, onSelect }) => {
     return (
-        <ul>
+        <ul clasName='result-list'>
             {searchResult &&
                 searchResult.map((post) => (
-                    <li onClick={() => onSelect(post)}>{post.title?.rendered}</li>
+                    <li className='result-list__item' onClick={() => onSelect(post)}>
+                        {post.title?.rendered}
+                    </li>
                 ))}
         </ul>
     )

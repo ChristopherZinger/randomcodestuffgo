@@ -34,67 +34,42 @@ h5,
 h6,
 .h6 {
     margin: 0;
-    @include font-inter-regular;
+    @include font-raleway-medium;
 }
 
 h1,
 .h1 {
-    font-size: 48px;
-
-    @include breakpoint(large) {
-        font-size: 80px;
-    }
+    @include h1;
 }
 
 h2,
 .h2 {
-    font-size: 35px;
-
-    @include breakpoint(large) {
-        font-size: 60px;
-    }
+    @include h2;
 }
 
 h3,
 .h3 {
-    font-size: 30px;
-
-    @include breakpoint(large) {
-        font-size: 50px;
-    }
+    @include h3;
 }
 
 h4,
 .h4 {
-    font-size: 27px;
-
-    @include breakpoint(large) {
-        font-size: 40px;
-    }
+    @include h4;
 }
 
 h5,
 .h5 {
-    font-size: 22px;
-
-    @include breakpoint(large) {
-        font-size: 28px;
-    }
+    @include h5;
 }
 
 h6,
 .h6 {
-    font-size: 18px;
-    @include upper-case;
-    @include font-raleway-medium;
-
-    @include breakpoint(large) {
-        font-size: 18px;
-    }
+    @include h6;
 }
 
 p {
     margin-bottom: 0;
+    @include text-m;
 }
 
 .icon {
@@ -129,4 +104,3 @@ p {
 .text-bold {
     @include text-bold;
 }
-

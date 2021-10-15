@@ -1,15 +1,15 @@
 .category-picker__item {
-	padding: 10px 10px;
-	margin: 5px 0;
-	border-radius: 4px;
-	cursor: pointer;
+    padding: 10px 10px;
+    margin: 5px 0;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .category-picker__item.is-selected {
-	background-color: coral;
-	color: white;
+    background-color: coral;
+    color: white;
 }
 
 .category-picker .components-button {
-	border: 1px solid black;
+    border: 1px solid black;
 }

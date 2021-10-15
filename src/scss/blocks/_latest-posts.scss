@@ -1,0 +1,26 @@
+.latest-posts__slider-navigation-panel {
+    display: flex;
+
+    @include breakpoint(small only) {
+        justify-content: center;
+    }
+}
+
+.latest-posts__slider-controls .tns__control.previous {
+    display: none;
+}
+
+.latest-posts__slider-controls .tns__control.next {
+    margin-left: $block-gutter;
+
+    @include breakpoint(small only) {
+        display: none;
+    }
+}
+
+.latest-posts .post-card__header {
+    @include h6;
+    text-transform: capitalize;
+    font-size: rem-calc(24);
+    font-weight: 500;
+}

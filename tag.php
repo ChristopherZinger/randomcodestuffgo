@@ -3,7 +3,7 @@
 ?>
 
 <?php get_header(); ?>
-  <section class="content">
+  <section class="content content--tag">
     <?= get_template_part(
       'template-parts/part', 
       'homepage-hero', 

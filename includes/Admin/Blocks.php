@@ -6,11 +6,14 @@ class Blocks
 {
     public static function init()
     {
-        self::register('selectable-categories', true);
         self::register('accordion', true);
         self::register('post-card', true);
         self::register('section', true);
         self::register('next-prev-btn', true);
+        self::register('latest-posts', true);
+        self::register('selected-posts', true);
+        self::register('post-list-with-search', true);
+        self::register('row-of-categories', true);
         self::register('series-navigation-buttons', true);
     }
 

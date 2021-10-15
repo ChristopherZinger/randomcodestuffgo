@@ -7,18 +7,36 @@
 .post-card {
     width: 100%;
     margin-bottom: calc(#{$block-gutter} / 3 * 2);
+    position: relative;
+
+    &::before {
+        content: '';
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: $font-color;
+        margin-bottom: 25px;
+        transition: all $transition;
+    }
+
+    &:hover::before {
+        width: 50px;
+    }
 }
 
 .post-card__header {
     margin: 0;
+    @include h6;
+    text-transform: capitalize;
 }
 
 .post-card__tags {
-    border-top: 1px solid $color-black;
+    border-top: 3px solid $color-black;
     margin-top: 20px;
     padding-top: 10px;
 }
 
 .post-card__excerpt {
-    margin: 30px 0px 0px 0px;
+    margin: 25px 0px 0px 0px;
+    @include text-m;
 }

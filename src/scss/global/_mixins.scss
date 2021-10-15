@@ -36,6 +36,64 @@
         height: 12px;
     }
 }
+/**
+ * Heading 
+ */
+@mixin h1 {
+    font-size: 48px;
+    line-height: 1.05;
+
+    @include breakpoint(large) {
+        font-size: 72px;
+    }
+}
+
+@mixin h2 {
+    font-size: 36px;
+    line-height: 1.05;
+
+    @include breakpoint(large) {
+        font-size: 60px;
+    }
+}
+
+@mixin h3 {
+    font-size: 36px;
+    line-height: 1.05;
+
+    @include breakpoint(large) {
+        font-size: 48px;
+    }
+}
+
+@mixin h4 {
+    font-size: 24px;
+    line-height: 1.05;
+
+    @include breakpoint(large) {
+        font-size: 36px;
+    }
+}
+
+@mixin h5 {
+    font-size: 18px;
+    line-height: 1.05;
+
+    @include breakpoint(large) {
+        font-size: 30px;
+    }
+}
+
+@mixin h6 {
+    font-size: 18px;
+    line-height: 1.1;
+    @include upper-case;
+    @include font-raleway-medium;
+
+    @include breakpoint(large) {
+        font-size: 24px;
+    }
+}
 
 /**
  * Text
@@ -87,4 +145,27 @@
 
 @mixin tag {
     @include text-s;
+}
+
+/**
+ * Lists
+ */
+@mixin li {
+    @include text-m;
+    position: relative;
+    margin-bottom: 10px;
+    line-height: 1.7;
+
+    &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 14px;
+        transform: translateY(-55%);
+        left: -20px;
+        height: 2px;
+        width: 12px;
+        background-color: $font-color;
+        border-radius: 2px;
+    }
 }

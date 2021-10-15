@@ -2,9 +2,9 @@ import ResultList from './resultList'
 
 const { __ } = wp.i18n
 const { Modal, TextControl } = wp.components
-const { Fragment, useState } = wp.element
+const { useState } = wp.element
 
-export const PostPicker = ({ onSelect, isOpen, close }) => {
+export const PostPicker = ({ onSelect, isOpen, close, postType = 'post', idsToExclude = [] }) => {
     const [searchQuery, setSearchQuery] = useState('')
 
     const handleSelectPost = (post) => {
@@ -12,21 +12,30 @@ export const PostPicker = ({ onSelect, isOpen, close }) => {
         close()
     }
 
+    const isTypePost = postType === 'post'
+
     return (
-        <Fragment>
+        <>
             {isOpen && (
-                <Modal title={__('Post Picker', 'rc')} onRequeseClose={close}>
+                <Modal
+                    title={isTypePost ? __('Post Picker', 'rc') : __('Page Picker', 'rc')}
+                    onRequestClose={close}
+                >
                     <div>
-                        <h4>Post Picker</h4>
                         <TextControl
-                            label={__('Find posts', 'rc')}
+                            label={isTypePost ? __('Find Posts', 'rc') : __('Find Pages', 'rc')}
                             value={searchQuery}
                             onChange={(v) => setSearchQuery(v)}
                         />
-                        <ResultList searchQuery={searchQuery} onSelect={handleSelectPost} />
+                        <ResultList
+                            searchQuery={searchQuery}
+                            onSelect={handleSelectPost}
+                            postType={postType}
+                            exclude={idsToExclude}
+                        />
                     </div>
                 </Modal>
             )}
-        </Fragment>
+        </>
     )
 }

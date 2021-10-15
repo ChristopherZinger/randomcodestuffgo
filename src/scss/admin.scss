@@ -1,5 +1,6 @@
 
 @import './global/variables';
+@import './global/colors';
 
 @import 'admin/template-selector';
 
@@ -7,3 +8,5 @@
  * Comoponents
  */
 @import './components/gutenberg/_gutenberg';
+@import './components/components-button';
+@import './components/post-picker';

@@ -11,8 +11,7 @@
 ?>
 
 
-<div class="cell medium-1 show-for-medium"></div>
-<div class="cell medium-12 large-6">
+<div class="cell">
 	<div>
 		<?= 
 			get_template_part('template-parts/part', 'home-section-header', 
@@ -23,11 +22,15 @@
 		?>
 	</div>
 	
-	<div >
+	<div class="grid-x grid-margin-x grid-margin-y" >
 		<?php 
-			if ($wp_query && $wp_query->have_posts()) {
-				while ($wp_query->have_posts()) {
+			if ($wp_query && $wp_query->have_posts()) :
+				while ($wp_query->have_posts()) :
 					$wp_query->the_post();
+    ?>
+    <div class="cell small-12 medium-4 large-2">
+
+    <?php
 					get_template_part('template-parts/part', 'card',
 						[
 							'title' => get_the_title(),
@@ -36,9 +39,13 @@
 							'linkURL' => get_the_permalink()
 						]
 					);
-				}
-			}
 		?>
+      </div>
+    <?php
+      endwhile;
+      endif;
+    ?>
+
 	</div>
 
 	<div>

@@ -13,7 +13,6 @@
   "main": "index.js",
   "dependencies": {
     "@babel/runtime": "^7.15.3",
-    "axios": "^0.21.1",
     "body-scroll-lock": "^4.0.0-beta.0",
     "foundation-sites": "^6.6.3",
     "regenerator-runtime": "^0.13.9",
@@ -52,6 +51,7 @@
     "gulp-svg-sprite": "^1.5.0",
     "gulp-svgmin": "^4.0.1",
     "node-sass": "^6.0.0",
+    "notify-send": "^0.1.2",
     "path": "^0.12.7",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.2",

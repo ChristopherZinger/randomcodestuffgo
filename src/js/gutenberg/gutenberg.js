@@ -6,10 +6,13 @@ import AccordionContent from './blocks/accordion/accordionContent'
 import AccordionList from './blocks/accordionList'
 import NextPrevBtn from './blocks/next-prev-btn'
 import Section from './blocks/section'
-import SelectableCategories from './blocks/selectable-categories'
 import SpecialList from './blocks/special-list'
 import SpecialListItem from './blocks/special-list/special-list-item'
 import SeriesNavigationButtons from './blocks/series-navigation-buttons'
+import RowOfCategories from './blocks/row-of-categories'
+import LatestPosts from './blocks/latest-posts'
+import SelectedPosts from './blocks/selected-posts'
+import PostListWithSearch from './blocks/post-list-with-search'
 
 const { __ } = wp.i18n
 const { setCategories, getCategories } = wp.blocks
@@ -36,9 +39,12 @@ Accordion()
 AccordionContent()
 AccordionHeader()
 AccordionList()
+LatestPosts()
 NextPrevBtn()
 PostCard()
-SelectableCategories()
+PostListWithSearch()
+RowOfCategories()
+SelectedPosts()
 SpecialList()
 SpecialListItem()
 Section()

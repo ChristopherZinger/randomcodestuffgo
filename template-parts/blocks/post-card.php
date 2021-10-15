@@ -1,6 +1,15 @@
 <?php
-	$postFromAttributes = $attributes['post'];
-	$postId = $postFromAttributes['id'];
+  if ( empty( $attributes ) ) {
+    return;
+  }
+
+	$mypost = $attributes['post'];
+
+  if ( ! $mypost ) {
+    return;
+  }
+
+	$postId = $mypost['id'];
 	$cardpost = get_post($postId);
 ?>
 

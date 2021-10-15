@@ -3,7 +3,7 @@
     position: relative;
 
     @include breakpoint(small only) {
-        border-bottom: 1px solid $color-black;
+        border-bottom: 3px solid $color-black;
     }
 
     @include breakpoint(medium) {
@@ -32,7 +32,7 @@
     }
 
     @include breakpoint(medium) {
-        border-bottom: 1px solid $color-black;
+        border-bottom: 3px solid $color-black;
     }
 
     & > li {
@@ -161,10 +161,7 @@
     }
 }
 
-
-
 .primary-menu__search .icon {
     height: 24px;
     width: 24px;
 }
-

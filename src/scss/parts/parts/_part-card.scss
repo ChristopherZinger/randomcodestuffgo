@@ -1,23 +1,23 @@
-.card {
+.rc-card {
     position: relative;
     @include text-thin;
     line-height: (25 / 16);
 }
 
-.card:not(:only-child) {
+.rc-card:not(:only-child) {
     margin-bottom: $spacing-xl;
 }
 
-.card__text {
+.rc-card__text {
     margin: 0;
     max-width: 500px;
 }
 
-.card__header {
+.rc-card__header {
     margin-bottom: 10px;
 }
 
-.card__link {
+.rc-card__link {
     position: absolute;
     height: 100%;
     width: 100%;
