@@ -75,6 +75,13 @@ const gutenbergStylesToRegister = [
             label: __('Extra Large Margin', 'rc'),
         },
     ],
+    [
+        'core/columns',
+        {
+            name: 'no-margins',
+            label: __('No Margin', 'rc'),
+        },
+    ],
 ]
 
 //
