@@ -79,7 +79,7 @@ const gutenbergStylesToRegister = [
         'core/columns',
         {
             name: 'no-margins',
-            label: __('No Margin', 'rc'),
+            label: __('No Margins', 'rc'),
         },
     ],
 ]
