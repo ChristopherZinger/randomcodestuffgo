@@ -24,7 +24,7 @@ window.onload = () => {
     initBlockStyles()
 }
 
-// Add Van Ons block category with custom icon
+// Add Custom block category with custom icon
 setCategories([
     {
         slug: 'rc',
