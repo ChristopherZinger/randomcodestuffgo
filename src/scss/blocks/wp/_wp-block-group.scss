@@ -1,21 +1,21 @@
 .wp-block-group {
-    .is-style-xs {
+    &.is-style-xs {
         margin-bottom: 10px;
     }
 
-    .is-style-s {
+    &.is-style-s {
         margin-bottom: 20px;
     }
 
-    .is-style-m {
+    &.is-style-m {
         margin-bottom: 40px;
     }
 
-    .is-style-l {
+    &.is-style-l {
         margin-bottom: 60px;
     }
 
-    .is-style-xl {
+    &.is-style-xl {
         margin-bottom: 80px;
     }
 }
