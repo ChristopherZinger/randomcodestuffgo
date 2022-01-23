@@ -5,7 +5,7 @@
 $shares = rcGetShareUrls();
 $class = $args['class'] ?? '';
 
-$title = __('Share this', 'van-ons');
+$title = __('Share this', 'rc');
 
 if (empty($shares)) {
     return;

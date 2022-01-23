@@ -105,7 +105,7 @@ class RCTheme
       ]
     );
   
-    wp_set_script_translations('rc.gutenberg', 'van-ons', get_template_directory_uri() . '/languages' );
+    wp_set_script_translations('rc.gutenberg', 'rc', get_template_directory_uri() . '/languages' );
   }
 
   public function themeSupports ()
