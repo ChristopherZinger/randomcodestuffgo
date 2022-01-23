@@ -14,8 +14,8 @@ class PostHelper
         $permalink = urlencode(get_the_permalink($postId));
         $title = strip_tags(apply_filters('the_title', get_the_title($postId)));
 
-        $subject = __('Random Code Stuff', 'van-ons');
-        $body = sprintf(__("Check this out: %s, %s.", 'van-ons'), $title, esc_url($permalink));
+        $subject = __('Random Code Stuff', 'rc');
+        $body = sprintf(__("Check this out: %s, %s.", 'rc'), $title, esc_url($permalink));
 
         return [
 			'linkedin' => "http://www.linkedin.com/shareArticle?mini=true&url=$permalink&title=$title",

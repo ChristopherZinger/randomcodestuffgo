@@ -104,3 +104,55 @@ p {
 .text-bold {
     @include text-bold;
 }
+
+@if $editor {
+    h1 {
+        @include post-h1;
+    }
+
+    h2 {
+        @include post-h2;
+    }
+
+    h3 {
+        @include post-h3;
+    }
+
+    h4 {
+        @include post-h4;
+    }
+
+    h5 {
+        @include post-h5;
+    }
+
+    h6 {
+        @include post-h6;
+    }
+}
+
+.rc-post-content {
+    h1 {
+        @include post-h1;
+    }
+
+    h2 {
+        @include post-h2;
+    }
+
+    h3 {
+        @include post-h3;
+    }
+
+    h4 {
+        @include post-h4;
+    }
+
+    h5 {
+        @include post-h5;
+    }
+
+    h6 {
+        @include post-h6;
+    }
+}
