@@ -1,0 +1,32 @@
+.rc-post-content {
+    > .wp-block-group {
+        margin-bottom: 80px;
+
+        > .wp-block-group__inner-container > .wp-block-group {
+            margin-bottom: 40px;
+        }
+    }
+}
+//  STYLES
+
+.wp-block-group:not(:last-child) {
+    .is-style-xs {
+        margin-bottom: 10px;
+    }
+
+    .is-style-s {
+        margin-bottom: 20px;
+    }
+
+    .is-style-m {
+        margin-bottom: 40px;
+    }
+
+    .is-style-l {
+        margin-bottom: 60px;
+    }
+
+    .is-style-xl {
+        margin-bottom: 80px;
+    }
+}

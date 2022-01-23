@@ -9,3 +9,7 @@
 @import './latest-posts';
 @import './selected-posts';
 @import './post-list-with-search';
+
+// wordpress blocks
+@import './wp/wp-block-group';
+@import './wp/wp-block-list';

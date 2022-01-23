@@ -46,12 +46,4 @@
         font-weight: bold;
         text-decoration: underline;
     }
-
-    > .wp-block-group {
-        margin-bottom: 80px;
-
-        > .wp-block-group__inner-container > .wp-block-group {
-            margin-bottom: 40px;
-        }
-    }
 }
