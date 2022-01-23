@@ -1,15 +1,6 @@
-.rc-post-content {
-    > .wp-block-group {
-        margin-bottom: 80px;
+.wp-block-group {
+    margin-bottom: 15px;
 
-        > .wp-block-group__inner-container > .wp-block-group {
-            margin-bottom: 40px;
-        }
-    }
-}
-//  STYLES
-
-.wp-block-group:not(:last-child) {
     .is-style-xs {
         margin-bottom: 10px;
     }
