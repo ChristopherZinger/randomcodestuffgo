@@ -87,7 +87,6 @@
 @mixin h6 {
     font-size: 18px;
     line-height: 1.1;
-    @include upper-case;
     @include font-raleway-medium;
 
     @include breakpoint(large) {
