@@ -196,3 +196,19 @@
         border-radius: 2px;
     }
 }
+
+@mixin codeblock {
+    border: 1px solid $color-grey;
+    border-radius: 2px;
+    padding: 5px 15px;
+    background-color: $color-bg;
+    color: $color-grey;
+}
+
+@mixin inlinecode {
+    white-space: nowrap;
+    padding: 0 5px;
+    background-color: rgba(50, 50, 50, 0.1);
+    border: none;
+    border-radius: 3px;
+}
