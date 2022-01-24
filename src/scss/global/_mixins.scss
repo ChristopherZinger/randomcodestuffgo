@@ -197,6 +197,10 @@
     }
 }
 
+/** 
+ * Code blocks
+ */
+
 @mixin codeblock {
     border: 1px solid $color-grey;
     border-radius: 2px;
@@ -211,4 +215,5 @@
     background-color: rgba(50, 50, 50, 0.1);
     border: none;
     border-radius: 3px;
+    color: $color-grey;
 }
