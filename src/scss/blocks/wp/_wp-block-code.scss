@@ -1,0 +1,9 @@
+.wp-block-code {
+    code {
+        @include codeblock;
+    }
+}
+
+kbd {
+    @include codeblock;
+}
