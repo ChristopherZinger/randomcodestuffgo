@@ -40,6 +40,48 @@ const gutenbergStylesToRegister = [
             label: __('Lead', 'rc'),
         },
     ],
+    [
+        'core/group',
+        {
+            name: 'xs',
+            label: __('Extra Small Margin', 'rc'),
+        },
+    ],
+    [
+        'core/group',
+        {
+            name: 's',
+            label: __('Small Margin', 'rc'),
+        },
+    ],
+    [
+        'core/group',
+        {
+            name: 'm',
+            label: __('Medium Margin', 'rc'),
+        },
+    ],
+    [
+        'core/group',
+        {
+            name: 'l',
+            label: __('Large Margin', 'rc'),
+        },
+    ],
+    [
+        'core/group',
+        {
+            name: 'xl',
+            label: __('Extra Large Margin', 'rc'),
+        },
+    ],
+    [
+        'core/columns',
+        {
+            name: 'no-margins',
+            label: __('No Margins', 'rc'),
+        },
+    ],
 ]
 
 //

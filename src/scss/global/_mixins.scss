@@ -95,6 +95,34 @@
 }
 
 /**
+  headings in post
+*/
+
+@mixin post-h1 {
+    font-size: 2.3rem;
+}
+
+@mixin post-h2 {
+    font-size: 2rem;
+}
+
+@mixin post-h3 {
+    font-size: 1.8rem;
+}
+
+@mixin post-h4 {
+    font-size: 1.6rem;
+}
+
+@mixin post-h5 {
+    font-size: 1.4rem;
+}
+
+@mixin post-h6 {
+    font-size: 1.2rem;
+}
+
+/**
  * Text
  */
 
